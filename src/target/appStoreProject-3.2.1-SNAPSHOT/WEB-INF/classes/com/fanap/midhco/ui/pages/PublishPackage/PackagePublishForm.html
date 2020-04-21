@@ -1,0 +1,24 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="container-fluid text-center">
+        <form class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="AppPackage.publishDate"/>
+                    </th>
+                    <td wicket:id="publishDateTime"/>
+
+                </tr>
+
+            </table>
+
+            <div style="padding-top: 10px" class="text-center">
+                <button wicket:id="savePublishDate" class="btn btn-default btn-md">ذخیره</button>
+                <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+		PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+		"http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<display-name>appStore Server</display-name>
+	<filter>
+		<filter-name>appStoreApplication</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>com.fanap.midhco.appstore.wicketApp.AppStoreApplication</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>appStoreApplication</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!--<servlet>-->
+		<!--<servlet-name>ss</servlet-name>-->
+		<!--<servlet-class>com.fanap.midhco.UploadRecieveServlet</servlet-class>-->
+		<!--<load-on-startup>0</load-on-startup>-->
+	<!--</servlet>-->
+	<servlet>
+		<servlet-name>springrest</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>portalLoginServlet</servlet-name>
+		<servlet-class>com.fanap.midhco.appstore.service.login.PortalLoginListenerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springrest</servlet-name>
+		<url-pattern>/restAPI/spring/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>portalLoginServlet</servlet-name>
+		<url-pattern>/portalLoginServlet/*</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>requestHeader</filter-name>
+		<filter-class>com.fanap.midhco.appstore.restControllers.controllers.AppStoreWebServiceFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>requestHeader</filter-name>
+		<url-pattern>/restAPI/spring/*</url-pattern>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>com.dtd.util.CORSFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/restAPI/spring/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>com.fanap.midhco.appstore.wicketApp.ServletListener</listener-class>
+	</listener>
+</web-app>

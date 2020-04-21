@@ -1,0 +1,39 @@
+<wicket:panel>
+	<tr class="navigation">
+		<td wicket:id="span">
+			<table style="width:100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td align="left" class="navigatorLabel" style="width: 10%;"><span wicket:id="navigatorLabel"/></td>
+					<td align="right" class="navigator">
+
+						<table cellpadding="0" cellspacing="0">
+							<tr>
+								<td><span wicket:id="navigator">[navigator]</span></td>
+								<td>&nbsp;</td>
+								<td><span wicket:id="gotoPageLabel">[Goto]</span></td>
+								<td><input type="text" wicket:id="pageNo" size="2"/></td>
+								<td><img wicket:id="gotoPage" style="cursor:pointer" wicket:message="title:label.goToPage"/></td>
+							</tr>
+						</table>
+
+					</td>
+					<td align="center">
+
+						<table>
+							<tr>
+								<td><label wicket:id="rowsPerPage"/></td>
+								<td><input wicket:id="noOfRows" type="text" size="3" maxlength="3" spec="pnum" style="text-align:center;"/></td>
+								<td><img wicket:id="changeRows" style="cursor:pointer" wicket:message="title:label.refrehTable"/></td>
+								<td><a wicket:id="exportToXLSX"><img src="images/nav/exportToXLSX.png" wicket:message="title:label.exportToXLSX"/></a></td>
+								<td><a wicket:id="exportAllToXLSX"><img src="images/table/table-down.png" wicket:message="title:label.exportAllToXLSX"/></a></td>
+								<td><a wicket:id="selectAll"><img src="images/selectAll.png" wicket:message="title:label.selectAll"/></a></td>
+								<td><a wicket:id="deselectAll"><img src="images/deselectAll.png" wicket:message="title:label.deselectAll"/></a></td>
+							</tr>
+						</table>
+
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</wicket:panel>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+        <context:component-scan base-package="com.fanap.midhco.appstore.restControllers.controllers" />
+
+        <aop:aspectj-autoproxy />
+
+        <bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+
+        <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+                <property name="messageConverters">
+                        <list>
+                                <ref bean="jacksonMessageConverter"/>
+                        </list>
+                </property>
+        </bean>
+
+        <bean id="productVO" class="com.fanap.midhco.appstore.restControllers.vos.ProductVO"/>
+        <bean id="productRequestVO" class="com.fanap.midhco.appstore.restControllers.vos.ProductRequestVO"/>
+        <bean id="productRequestVOs" class="com.fanap.midhco.appstore.restControllers.vos.ProductRequestVOs"/>
+        <bean id="handlerAppVO" class="com.fanap.midhco.appstore.restControllers.vos.HandlerAppVO"/>
+        <bean id="appUploadVO" class="com.fanap.midhco.appstore.restControllers.vos.AppUploadVO"/>
+        <bean id="appVO" class="com.fanap.midhco.appstore.restControllers.vos.AppVO"/>
+        <bean id="commentRateInsertVo" class="com.fanap.midhco.appstore.restControllers.vos.CommentRateInsertVo"/>
+        <bean id="packageVO" class="com.fanap.midhco.appstore.restControllers.vos.PackageVO"/>
+        <bean id="changeLogVO" class="com.fanap.midhco.appstore.restControllers.vos.ChangeLogVO"/>
+        <bean id="userVO" class="com.fanap.midhco.appstore.restControllers.vos.UserVO"/>
+        <bean id="appSearchVO" class="com.fanap.midhco.appstore.restControllers.vos.AppSearchVO"/>
+
+</beans>

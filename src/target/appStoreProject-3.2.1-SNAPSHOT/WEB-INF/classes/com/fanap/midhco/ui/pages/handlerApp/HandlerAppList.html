@@ -1,0 +1,62 @@
+<wicket:panel>
+    <div wicket:id="modal">Modal</div>
+    <center>
+        <form wicket:id="searchForm" autocomplete="off">
+            <table class="form">
+                <tr>
+                    <th>
+                        <wicket:message key="HandlerApp.versionCode"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="versionCode"/></td>
+
+                    <th>
+                        <wicket:message key="HandlerApp.organization"/>
+                    </th>
+                    <td>
+                        <div wicket:id="organization"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="HandlerApp.os.osEnvironment"/>
+                    </th>
+                    <td>
+                        <div wicket:id="osEnvironment"/>
+                    </td>
+
+                </tr>
+                <tr>
+
+                    <th>
+                        <wicket:message key="label.active"/>
+                    </th>
+                    <td>
+                        <div wicket:id="isActive"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="HandlerApp.isDefault"/>
+                    </th>
+                    <td>
+                        <div wicket:id="isDefault"/>
+                    </td>
+
+                </tr>
+                <tr>
+
+                </tr>
+                <tr>
+                    <td align="center" colspan="4">
+                        <input class="btn" type="button" wicket:id="search" wicket:message="value:label.search"/>
+                        <input class="btn" type="button" wicket:id="reset" wicket:message="value:label.reset"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <td align="center" colspan="4">
+            <input class="btn" type="button" wicket:id="create" wicket:message="value:label.add"/>
+            <input class="btn" type="button" wicket:id="close" wicket:message="value:label.close"/>
+        </td>
+        <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]</table>
+        <input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/>
+    </center>
+</wicket:panel>

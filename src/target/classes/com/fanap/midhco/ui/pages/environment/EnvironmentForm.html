@@ -1,0 +1,35 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form wicket:id="form" style="min-width: 600px;">
+                <table>
+                    <tr>
+                        <th colspan="2">
+                            <wicket:message key="osEnvironment.name"/>
+                            <span class="required">*</span>
+                        </th>
+                        <td>
+                            <input class="form-control" type="text" wicket:id="envName">
+                        </td>
+
+                    </tr>
+
+
+                </table>
+                <div>
+
+                </div>
+                <div>
+                    <input type="button" class="btn" wicket:id="save" value="submit"
+                           wicket:message="value:label.submit"/>
+                    <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                           wicket:message="value:label.cancel"/>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</wicket:panel>

@@ -1,0 +1,110 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+    <div wicket:id="modal">Modal</div>
+
+    <div class="container-fluid text-right">
+
+        <form wicket:id="form">
+
+            <table class="form">
+                <tr style="padding-top: 5px">
+                    <th>
+                        <wicket:message key="Anouncement.text"/>
+                    </th>
+                    <td>
+                        <input style="max-width: 300px" class="form-control" type="text" wicket:id="anouncementText">
+                    </td>
+
+                    <th>
+                        <wicket:message key="label.activation.verb"/>
+                    </th>
+                    <td style="margin-left: 10px" wicket:id="isActive">
+                    </td>
+                    <td />
+
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="Anouncement.startDateTime"/>
+                    </th>
+                    <td wicket:id="startDateTime"/>
+
+                    <th>
+                        <wicket:message key="Anouncement.expireDateTime"/>
+                    </th>
+                    <td style="margin-left: 10px" wicket:id="expireDateTime"/>
+
+                    <td/>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+                        <wicket:message key="OSType"/>
+                    </th>
+
+                    <td colspan="4">
+                        <div wicket:id="osTypes"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="Anouncement.type"/>
+                    </th>
+                    <td wicket:id="anouncementType"/>
+
+
+                    <th>
+                        <wicket:message key="Anouncement.actionCategory"/>
+                    </th>
+                    <td wicket:id="actionCategory"/>
+
+                    <td jid="checkTickId" style="padding-left: 15px;">
+                        <input class="btn" type="button" wicket:id="createAnouncement" wicket:message="value:label.create.anouncement.description"/>
+                        <i class="entypo-check" style="display: none;color: #00a65a"></i>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="Anouncement.organizations"/>
+                    </th>
+                    <td>
+                    <td wicket:id="organizations"/>
+
+                    </td>
+
+                    <th>
+                        <wicket:message key="Anouncement.environment"/>
+                    </th>
+                    <td>
+                    <td wicket:id="osEnvironments"/>
+
+                    </td>
+
+                </tr>
+
+                <tr style="margin-bottom: 10px">
+                    <th>
+                        <wicket:message key="Anouncement.actionImage"/>
+                    </th>
+                    <td colspan="3" wicket:id="anouncementImage"/>
+
+                    <td >
+                        <img style="width: 80px; padding-left: 15px;" wicket:id="tmpImage"/>
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+            <input style="padding: 10px" class="btn" type="button" wicket:id="saveAnouncement"  wicket:message="value:label.save"/>
+            <input style="padding: 10px" class="btn" type="button" wicket:id="cancel"  wicket:message="value:label.cancel"/>
+
+        </form>
+    </div>
+</wicket:panel>

@@ -1,0 +1,77 @@
+<wicket:panel xmlns:wicket="http://www.apache.org/internal/xmlbeans/wsdlsubst">
+    <div wicket:id="modal">Modal</div>
+    <center>
+        <form wicket:id="searchForm" autocomplete="off">
+
+            <table class="form padding">
+                <tr>
+                    <th>
+                        <wicket:message key="Device.title"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="title"/></td>
+
+                    <th>
+                        <wicket:message key="Device.imei"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="imei" size="15" maxlength="15"/></td>
+
+                    <th>
+                        <wicket:message key="Device.state"/>
+                    </th>
+                    <td>
+                        <div style="padding-left: 5px" wicket:id="state"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="OSType"/>
+                    </th>
+                    <td>
+                        <div wicket:id="osType"/>
+                    </td>
+                    <th>
+                        <wicket:message key="OS"/>
+                    </th>
+                    <td>
+                        <div wicket:id="os"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="Device.usedBy"/>
+                    </th>
+                    <td>
+                        <div style="padding-left: 5px" wicket:id="usedBy"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="Device.active"/>
+                    </th>
+                    <td>
+                        <div style="padding-left: 5px" wicket:id="active"/>
+                    </td>
+                    <td colspan="4"></td>
+                </tr>
+
+
+                <tr>
+                    <td align="center" class="padding" style="padding-right: 10px" colspan="6">
+                        <input class="btn" type="button" wicket:id="search" wicket:message="value:label.search"/>
+                        <input class="btn" type="button" wicket:id="reset" wicket:message="value:label.reset"/>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+            <div>
+                <div wicket:id="deviceTable"></div>
+            </div>
+
+        <div class="row" style="padding-bottom: 20px ; padding-top: 10px">
+            <input class="btn" style="margin-right: 30px" type="button" wicket:id="setSelected" wicket:message="value:label.select"/>
+            <input class="btn" type="button" wicket:id="add" wicket:message="value:label.add"/>
+        </div>
+
+    </center>
+</wicket:panel>

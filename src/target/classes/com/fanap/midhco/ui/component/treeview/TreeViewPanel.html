@@ -1,0 +1,19 @@
+<wicket:panel>
+    <form wicket:id="form">
+        <table width="100%">
+            <tr>
+                <td>
+                    <input class="form-control" wicket:id="searchBox" type="text"/>
+
+                    <div wicket:id="treePanelDiv">
+                    </div>
+                    <input type="hidden" wicket:id="selected_ids"/>
+                </td>
+            </tr>
+            <tr>
+                <td><input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/></td>
+            </tr>
+
+        </table>
+    </form>
+</wicket:panel>

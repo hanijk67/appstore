@@ -1,0 +1,46 @@
+<wicket:panel>
+
+    <span wicket:id="feedbackPabel"/>
+
+    <div class="container-fluid text-center">
+
+        <form role="form" class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="User.username"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="userName"/></td>
+                    <th>
+                        <wicket:message key="Contact.firstName"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="contact.firstName"/></td>
+                    <th>
+                        <wicket:message key="Contact.lastName"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="contact.lastName"/></td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="UserStatus"/>
+                    </th>
+                    <td>
+                        <div wicket:id="userStatus"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="User.roles"/>
+                    </th>
+                    <td>
+                        <div wicket:id="roles"/>
+                    </td>
+                </tr>
+            </table>
+            <div style="padding-top: 10px" class="text-center">
+                <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+                <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

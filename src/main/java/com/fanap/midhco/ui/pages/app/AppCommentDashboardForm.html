@@ -1,0 +1,152 @@
+<wicket:panel xmlns:input="http://www.w3.org/1999/html">
+
+    <div wicket:id="modal">Modal</div>
+
+    <style>h4{text-align: right;}</style>
+
+    <div jid="appDashboardParent">
+
+        <div ng-app="appDashboard">
+            <span wicket:id="feedbackPanel"/>
+
+    <div class="container-fluid text-center" style="width:900px;">
+
+        <form class="form-inline" wicket:id="form">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="tile_stats_box bg_white">
+                        <div class="table-responsive">
+                            <h4 class="count_top"><i class="entypo-thumbs-up green"></i> تعداد لایک های امروز</h4>
+                                    <div class="alignright"><i class="entypo-up"></i>
+                                        <label wicket:id="favoriteCountInCurrentDate"/>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="tile_stats_box bg_white">
+                        <div class="table-responsive">
+                                    <h4 class="count_top"> تعداد دیدگاه های امروز</h4>
+                                    <div class="alignright"><i class="entypo-up"></i>
+                                        <label wicket:id="todayComments"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="tile_stats_box bg_white">
+                        <div class="table-responsive">
+                                    <h4 class="count_top"><i class="fa fa-line-chart"></i></h4>
+                                    <div style="padding: 19px;background: #fff;display: table;margin: 0 auto; border-radius: 4px">
+                                        <div class="col-md-4">
+                                            <div wicket:id="averageRateCircleBadge"/>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div wicket:id="downloadCountCircleBadge"/>
+                                    </div>
+                                        <div class="col-md-4">
+                                            <div wicket:id="installationCountCircleBadge"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        </div>
+                        <div class="col-md-6" jid="appDashboarId" ng-controller="commentOnDashboardController">
+                    <div class="tile_stats_box bg_white">
+                        <div class="table-responsive">
+                            <h4 class="count_top"><i class="fa fa-list red"></i> دیدگاه های تازه</h4>
+                            <div class="alignright">
+                                <ul class="list-group">
+                                            <li class="list-group-item"
+                                                ng-repeat="commentVo in commentVoList track by $index">
+                                                {{commentVo.commentText}}
+                                                <span class="badge">
+                                            {{commentVo.userName}}
+                                        </span>
+                                            </li>
+                                </ul>
+                                <input class="btn btn-primary" type="button" wicket:id="moreComments" wicket:message="value:app.more.comments"/>
+
+                                <input class="btn btn-primary" type="button" wicket:id="groupComments" wicket:message="value:app.group.comments"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                            <div wicket:id="favoriteDrillDownChartMasterContainer">
+
+                </div>
+
+                                </div>
+
+                                </div>
+
+                    <div class="panel panel-primary" id="charts_env">
+
+                        <div class="panel-heading">
+                            <div class="panel-title">گزارش های آماری</div>
+
+                            <div class="panel-options">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a wicket:id="rateReportLbl" href="#rateReportId"
+                                                          data-toggle="tab">میزان محبوبیت</a></li>
+                                    <li class=""><a wicket:id="favoriteReportLbl" href="#favoriteReportId"
+                                                    data-toggle="tab">تعداد لایک ثبت شده</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel-body">
+
+                            <div class="tab-content">
+
+                                <div class="tab-pane active" id="rateReportId" wicket:id="rateReportDiv">
+                                    <div wicket:id="rateReportPanel"></div>
+                    </div>
+
+                                <div class="tab-pane" id="favoriteReportId">
+
+                                    <div style="padding-top: 10px" class="text-center">
+                                        <button wicket:id="lastSevenDaysBtn" class="btn btn-default btn-md">هفت روز
+                                            اخیر
+                                        </button>
+                                        <button wicket:id="lastMonthBtn" class="btn btn-default btn-md">ماه اخیر
+                                        </button>
+                                        <button wicket:id="lastYearBtn" class="btn btn-default btn-md">سال اخیر</button>
+                </div>
+
+                                    <div wicket:id="favoriteReportDiv">
+                                        <div id="favoriteReportDemo" class="morrischart">
+                                            <div wicket:id="favoriteReportPanel"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+            </div>
+                    <div style="padding-top: 10px" class="text-center">
+                        <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+                    </div>
+        </form>
+            </div>
+        </div>
+    </div>
+
+</wicket:panel>

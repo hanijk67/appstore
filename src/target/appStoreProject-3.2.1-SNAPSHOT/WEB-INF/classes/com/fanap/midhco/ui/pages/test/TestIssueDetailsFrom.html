@@ -1,0 +1,46 @@
+<wicket:panel xmlns="http://wicket.apache.org">
+    <div style="border: solid 2px black; padding: 15px">
+        <div wicket:id="formName" style="text-align: center"/>
+        <form wicket:id="form" class="form-inline" style="border: double; border: #070601 ; padding: 20px">
+
+            <div>
+                <div wicket:id="testSubIssueDescriptionLbl"/>
+                <table class="table form">
+                    <tr>
+                        <th>
+                            <wicket:message key="TestSubIssue.user"/>
+                        </th>
+                        <td>
+                            <label disabled="true" readonly="true" wicket:id="testUser"/>
+                        </td>
+                        <th>
+                            <wicket:message key="TestIssue.approvalState"/>
+                        </th>
+                        <td>
+                            <label disabled="true" readonly="true" wicket:id="approvalState"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <wicket:message key="TestIssue.description"/>
+                        </th>
+
+                        <div disabled="disabled" readonly="readonly" jid="historyMessageId" class=" rtl "
+                             style="padding: 5px; border: solid 1px;border-color: rgba(178, 186, 184, 0.76);text-align: right">
+                            <p ng-bind-html="htmlHistoryMessage"></p>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <div wicket:id="testSubIssueDevices"/>
+                <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]</table>
+            </div>
+
+        </form>
+
+    </div>
+
+</wicket:panel>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="http://www.example.org/menu"
+		   xmlns="http://www.example.org/menu">
+
+	<xs:element name="appStoreMenuPanel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="MenuGroup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Menu">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string"></xs:element>
+			<xs:element name="idCode" type="xs:string"></xs:element>
+			<xs:element name="menuClass" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:group name="MenuGroup">
+		<xs:sequence>
+			<xs:element name="menus" type="Menu" maxOccurs="unbounded" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:group>
+
+</xs:schema>

@@ -1,0 +1,27 @@
+<wicket:panel>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="">
+                <div class="form-inline input-group">
+
+                    <!--<span onclick="javascript:event.preventDefault();$(this).siblings('input').focus();"-->
+                            <!--style="vertical-align:middle;cursor: pointer" class="">-->
+                    <!--</span>-->
+
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </div>
+                        <input wicket:id="date" type="text" style="" class="form-control input-sm" >
+
+                        <div class="input-group-addon" wicket:id="timeIcon">
+                            <i class="glyphicon glyphicon-time"></i>
+                        </div>
+                        <input wicket:id="time" type="text" style="direction: ltr" class="form-control input-sm" >
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</wicket:panel>

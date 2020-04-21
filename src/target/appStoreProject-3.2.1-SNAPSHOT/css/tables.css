@@ -1,0 +1,149 @@
+.table {
+    width: 100%;
+}
+
+table.form {
+    -moz-border-radius: 5px;
+    border: 1px solid #999999;
+    background-color: #FFFFFF;
+    font-family: Tahoma, serif;
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+    border-color: #ebebeb;
+    max-width: 95%;
+}
+
+.mytable {
+    border: 1px solid #cccccc;
+    background-color: #FFFFFF;
+    width: 950px;
+    border-radius: 5px 5px 5px 5px;
+
+}
+
+table.form th {
+    padding-right: 10px;
+    text-align: left;
+}
+
+table.form select {
+    font-size: 12px;
+}
+
+table.list {
+    -moz-border-radius: 5px;
+    padding: 2px;
+    margin: 5px;
+    font-family: Tahoma, serif;
+    border: 1px solid #999999;
+    font-size: 12px;
+    max-width: 95%;
+}
+
+table.list th.group {
+    background-color: #cccccc;
+}
+
+table.list tr.headers th {
+    height: 35px;
+    background: #d0d3d9;
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+table.selectionPanelList {
+    max-width: 200px;
+}
+
+table.selectionPanelList tr.headers th {
+    height: 20px;
+    background-color: #ff9b00;
+    font-size: 11px;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: center;
+}
+
+tr.odd, tr.oddSelectable {
+    background-color: #fbfbfb;
+}
+
+tr.even, tr.evenSelectable {
+    background-color:#f0f0f1;
+}
+
+tr.selected {
+    background-color: #b6d6e4;
+}
+
+a.wicket_orderNone, a.wicket_orderNone:active, a.wicket_orderNone:hover {
+    background: url("../images/arrow_off.png") no-repeat right;
+    padding-right: 12px;
+    padding-left: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.wicket_orderUp, a.wicket_orderUp:active, a.wicket_orderUp:hover {
+    background: url("../images/arrow_up.png") no-repeat right;
+    padding-right: 12px;
+    padding-left: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a.wicket_orderDown, a.wicket_orderDown:active, a.wicket_orderDown:hover {
+    background: url("../images/arrow_down.png") no-repeat right;
+    padding-right: 12px;
+    padding-left: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+table.view {
+    -moz-border-radius: 5px;
+    border: 1px solid #999999;
+    background-color: #91dd80;
+    font-family: Tahoma, serif;
+    font-size: 12px;
+    margin: 5px;
+}
+
+table.view th {
+    padding-right: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
+td.iconCell {
+    width: 30px;
+}
+
+table.likeTxtField {
+    background-color: WHITE;
+    border: 1px solid #7A8A99;
+    direction: ltr;
+    padding: 0;
+    border-color: #ebebeb;
+}
+
+tr.sumAll td {
+    text-align: center;
+    color: #0000dd;
+}
+
+tr.sumSuc td {
+    text-align: center;
+    color: #006600;
+}
+
+td.chartTitle {
+    -moz-border-radius: 4px;
+    background-color: #cdcde0;
+    font-family: Tahoma, serif;
+    font-size: 12px;
+}

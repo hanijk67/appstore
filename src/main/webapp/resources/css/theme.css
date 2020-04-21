@@ -1,0 +1,356 @@
+div.wicket-modal {
+    direction: ltr;
+}
+
+a.w_close {
+    left: 3px;
+    z-index: 10;
+}
+
+div.w_caption {
+    direction: rtl;
+}
+
+div.w_content {
+    direction: rtl;
+}
+
+span.w_captionText {
+    font-family: Tahoma, serif;
+    font-size: 12px;
+}
+
+#wicketAjaxDebugWindow {
+    direction: ltr;
+}
+
+.navigatorLabel, .navigator {
+    font-family: Tahoma, serif;
+    font-size: 12px;
+    font-style: normal;
+    width: 20%;
+}
+
+.feedbackPanelERROR {
+    /*font-family: Tahoma, serif;*/
+    /*font-size: 12px; !*font-style: italic;*!*/
+    /*color: #252455;*/
+    /*font-weight: bold;*/
+}
+
+fieldset {
+    background-color: #cdcde0;
+    -moz-border-radius: 10px;
+}
+
+div.tab-panel {
+    clear: right;
+    padding: 5px; /*overflow: auto;*/
+}
+
+/* Tab Panel */
+div.tabpanel div.tab-row {
+    float: right;
+    width: 100%;
+    background: #DAE0D2 url("../images/tabs/bg.gif") repeat-x bottom;
+    line-height: normal;
+}
+
+div.tabpanel div.tab-row ul {
+    margin: 0;
+    padding: 5px 5px 0;
+    list-style: none;
+}
+
+div.tabpanel div.tab-row li {
+    float: right;
+    background: url("../images/tabs/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+div.tabpanel div.tab-row a {
+    display: block;
+    background: url("../images/tabs/right.gif") no-repeat right top;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #eee;
+}
+
+div.tabpanel div.tab-row a:hover {
+    color: #fff;
+}
+
+div.tabpanel div.tab-row li.selected {
+    background-image: url("../images/tabs/left_on.gif");
+}
+
+div.tabpanel div.tab-row li.selected a {
+    background-image: url("../images/tabs/right_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* Tab Panel 1 */
+div.tabpanel1 div.tab-row {
+    float: right;
+    width: 100%;
+    background: #DAE0D2 url("../images/tabs1/bg.gif") repeat-x bottom;
+    line-height: normal;
+}
+
+div.tabpanel1 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel1 div.tab-row li {
+    float: right;
+    background: url("../images/tabs1/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 9px;
+}
+
+div.tabpanel1 div.tab-row a {
+    display: block;
+    background: url("../images/tabs1/right.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #eee;
+}
+
+div.tabpanel1 div.tab-row a:hover {
+    color: #fff;
+}
+
+div.tabpanel1 div.tab-row li.selected {
+    background-image: url("../images/tabs1/left_on.gif");
+}
+
+div.tabpanel1 div.tab-row li.selected a {
+    background-image: url("../images/tabs1/right_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* Tab Panel 2 */
+div.tabpanel2 div.tab-row {
+    float: right;
+    width: 100%;
+    background: #369 url("../images/tabs2/bg.gif") repeat-x bottom;
+    font-size: 85%;
+    line-height: normal;
+}
+
+div.tabpanel2 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel2 div.tab-row li {
+    float: right;
+    background: url("../images/tabs2/right.gif") no-repeat right top;
+    margin: 0;
+    padding: 0 5px 0 0;
+}
+
+div.tabpanel2 div.tab-row a {
+    float: right;
+    display: block;
+    background: url("../images/tabs2/left.gif") no-repeat left top;
+    padding: 5px 7px 4px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #9cf;
+    white-space: nowrap;
+}
+
+div.tabpanel2 div.tab-row a {
+    float: none;
+}
+
+div.tabpanel2 div.tab-row a:hover {
+    color: #fff;
+}
+
+div.tabpanel2 div.tab-row li.selected {
+    background-image: url("../images/tabs2/right_on.gif");
+}
+
+div.tabpanel2 div.tab-row li.selected a {
+    background-image: url("../images/tabs2/left_on.gif");
+    color: #333;
+    padding-bottom: 5px;
+}
+
+/* Tab Panel 3 */
+div.tabpanel3 div.tab-row {
+    float: right;
+    width: 100%;
+    background: #eee url("../images/tabs3/bg.jpg") repeat-x top;
+    line-height: normal;
+}
+
+div.tabpanel3 div.tab-row ul {
+    margin: 0;
+    padding: 10px 10px 0;
+    list-style: none;
+}
+
+div.tabpanel3 div.tab-row li {
+    float: right;
+    background: url("../images/tabs3/left.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 28px;
+}
+
+div.tabpanel3 div.tab-row a {
+    float: right;
+    display: block;
+    background: url("../images/tabs3/right.gif") no-repeat right top;
+    padding: 9px 28px 4px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #92A2AC;
+}
+
+div.tabpanel3 div.tab-row a {
+    float: none;
+}
+
+div.tabpanel3 div.tab-row a:hover {
+    color: #A56060;
+}
+
+div.tabpanel3 div.tab-row li.selected {
+    background-image: url("../images/tabs3/left_on.gif");
+}
+
+div.tabpanel3 div.tab-row li.selected a {
+    background-image: url("../images/tabs3/right_on.gif");
+    color: #A56060;
+}
+
+/* Tab Panel 4 */
+div.tabpanel4 div.tab-row {
+    float: right;
+    width: 100%;
+    line-height: normal;
+}
+
+div.tabpanel4 div.tab-row ul {
+    margin: 0;
+    height: 20px;
+    padding-left: 10px;
+    background: url(../images/tabs4/tab_bottom.gif) repeat-x bottom;
+}
+
+div.tabpanel4 div.tab-row li {
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+div.tabpanel4 div.tab-row a:link, div.tabpanel4 div.tab-row a:visited {
+    float: right;
+    background: #f3f3f3;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 2px 10px 2px 10px;
+    margin-right: 4px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #666;
+}
+
+div.tabpanel4 div.tab-row li.selected a:link, div.tabpanel4 div.tab-row a:visited.active {
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    color: #000;
+}
+
+div.tabpanel4 div.tab-row a:hover {
+    background: #fff;
+}
+
+#bysy_indicator {
+    position: absolute;
+    top: 76px;
+    z-index: 10000;
+    text-align: center;
+    width: 100%;
+}
+
+.feedbackPanelERROR {
+    text-align: right;
+}
+
+tr.menuBar {
+    background-image: url('../menu_files/top_header_04.jpg');
+    background-repeat: repeat-x;
+}
+
+div.wicket-aa {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+    font-size: 12px;
+    background-color: white;
+    border-width: 1px;
+    border-color: #cccccc;
+    border-style: solid;
+    padding: 2px;
+    margin: 1px 0 0 0;
+    text-align: left;
+    height: 150px;
+    width: auto;
+    background-color: #e6e6fa;
+}
+
+div.wicket-aa-container {
+    border: 1px solid, #000000;
+    box-shadow: 10px 10px 5px #888888;
+    text-align: right;
+    direction: rtl;
+    z-index: 21000;
+}
+
+div.wicket-aa ul {
+    list-style: none;
+    padding: 2px;
+    margin: 0;
+    background-color: #e6e6fa;
+    overflow-x: hidden;
+    z-index: 21000;
+}
+
+div.wicket-aa ul li {
+    text-align: right;
+    z-index: 21000;
+}
+
+div.wicket-aa ul li.selected {
+    background-color: #FFFF00;
+    padding: 2px;
+    margin: 0;
+    z-index: 21000;
+}
+
+.custom-menu {
+    z-index:1000;
+    position: absolute;
+    background-color:#C0C0C0;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+div.wicket-modal DIV.w_content_container { position : static !important; }
+
+

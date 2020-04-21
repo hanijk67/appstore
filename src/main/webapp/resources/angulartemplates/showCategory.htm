@@ -1,0 +1,88 @@
+<div ng-controller="showCategoryController">
+    <div class="container" ng-repeat="appCategory in appCategoryList">
+
+        <div class="container-body">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1>
+
+                    </h1>
+                </div>
+                <hr>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="msht-row-head">
+                                    <span class="msht-row-title">
+                                        {{appCategory.categoryTitle}}
+                                    </span>
+
+                                    <span class="msht-row-more pull-right" style="cursor:pointer;font-size:30px">
+                                        <a ng-click="showCategory(appCategory)">
+                                            <span class="entypo-right-circled"></span>
+                                        </a>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" ng-repeat="app in appCategory.appList track by app.id">
+                            <div class="row-wrapper center-block">
+                                <div>
+                                    <!--Card-->
+                                    <div class="card" ng-click="launchAppDetailWindow(app)" style="cursor: pointer">
+
+                                        <!--Card image-->
+                                        <div class="view overlay hm-white-slight">
+                                            <img ng-show="app.iconThumbNail != null" src="{{app.iconThumbNail}}"
+                                                 class="img-fluid" alt="">
+                                            <a>
+                                                <div class="mask waves-effect waves-light"></div>
+                                            </a>
+                                        </div>
+                                        <!--/.Card image-->
+
+                                        <!--Card content-->
+                                        <div class="card-block">
+                                            <!--Title-->
+                                            <h4 class="card-title">{{app.title}}</h4>
+                                            <hr>
+                                            <!--Text-->
+                                            <p class="card-text">{{app.description}}</p>
+                                        </div>
+                                        <!--/.Card content-->
+
+                                        <!-- Card footer -->
+                                        <div class="card-data">
+                                            <ul>
+                                                <li><i class="entypo-list"></i>{{app.category}}</li>
+                                                <li><i class="entypo-briefcase"></i>{{app.packageName}}</li>
+                                                <li><i class="entypo-user"></i>{{app.developer}}</li>
+                                                <li><i class="entypo-mobile"></i>{{app.versionCode}} -
+                                                    {{app.versionName}}
+                                                </li>
+                                                <li><i class="entypo-download"></i>{{app.number_installs != null ?
+                                                    app.number_installs : 0}}
+                                                </li>
+                                                <li><i class="entypo-drive"></i>{{isNaN(app.size) ? app.size :
+                                                    "---"}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Card footer -->
+
+                                    </div>
+                                    <!--/.Card-->
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

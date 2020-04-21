@@ -1,0 +1,171 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="container-fluid text-center">
+
+        <form class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="OSType"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <div wicket:id="osType" />
+                    </td>
+                    <th>
+                        <wicket:message key="OS"/>
+                    </th>
+                    <td>
+                        <div wicket:id="os"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="App.appPackageName"/>
+                    </th>
+                    <td>
+                        <input class="form-control" wicket:id="packageName" />
+                    </td>
+
+                    <th>
+                        <wicket:message key="App.title"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="title">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="App.shortDescription"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td colspan="3">
+                        <input class="form-control"  style="width:100%" type="text" wicket:id="shortDescription">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="App.keyWords"/>
+                    </th>
+                    <td colspan="3" wicket:id="tagsinput" style="max-width: 400px">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        <label type="label" wicket:id="deleteLbl"/>
+                    </td>
+
+                    <td >
+                        <div  wicket:id="delete"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="App.developer"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <div wicket:id="developer"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="AppCategory"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <div wicket:id="appCategory"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <wicket:message key="App.selected.AppCategory"/>
+                    </td>
+                    <td>
+                        <span wicket:id="appCategoryLbl"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <wicket:message key="App.description"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="description"/>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="col-sm-12" wicket:id="appPackagesPanel">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color: tan">
+                        <div class="panel-title">
+                            <h4>
+بسته های برنامه
+                            </h4>
+                        </div>
+                        <div class="panel-options">
+                            <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="panel-body no-padding">
+                        <div style="min-height: 100px;width: 98%;" wicket:id="appPackagesList"/>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="col-sm-12" wicket:id="mainPackagePanel">-->
+                <!--<div class="panel panel-primary">-->
+                    <!--<div class="panel-heading" style="background-color: tan">-->
+                        <!--<div class="panel-title">-->
+                            <!--<h4>-->
+<!--بسته اصلی برنامه-->
+                            <!--</h4>-->
+                        <!--</div>-->
+                        <!--<div class="panel-options">-->
+                            <!--<a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="panel-body no-padding">-->
+                        <!--<div style="min-height: 100px;width: 98%;" wicket:id="packageEditForm"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <div class="col-sm-12" wicket:id="addPackagePanel">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color: tan">
+                        <div class="panel-title">
+                            <h4>
+افزودن بسته جدید
+                            </h4>
+                        </div>
+                        <div class="panel-options">
+                            <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="panel-body no-padding">
+                        <div style="min-height: 100px;width: 98%;" wicket:id="addPackageForm"/>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding-top: 10px" class="text-center">
+                <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+                <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

@@ -1,0 +1,23 @@
+<wicket:extend>
+    <center>
+        <table class="form" style=" ">
+            <tr>
+                <td colspan="2" align="center" style="padding: 10px;">
+                    <span class="error" wicket:id="message">Excpetion message</span>
+                </td>
+            </tr>
+            <tr>
+                <form wicket:id="form" autocomplete="off">
+                    <td align="center" style="padding: 10px;">
+                        <input class="btn" type="button" wicket:id="mainPage" wicket:message="value:label.main"/>
+                    </td>
+                </form>
+                <td align="center" style="padding: 10px;">
+                    <input class="btn" type="button" wicket:message="value:label.backPage"
+                           onclick="window.history.back();"/>
+                </td>
+            </tr>
+        </table>
+        <textarea rows="30" cols="150" wicket:id="excStackTrace" readonly="true" dir="ltr"> </textarea>
+    </center>
+</wicket:extend>

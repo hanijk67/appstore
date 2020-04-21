@@ -1,0 +1,44 @@
+<wicket:panel>
+    <div wicket:id="modal"/>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="1" wicket:id="opener" class="opener">
+                                <tr>
+                                    <td nowrap="true"><span wicket:id="head"/></td>
+                                    <td class="handler"><img src="images/scrollArrow.png" alt="v"/></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="padding-right:7px">
+                            <a wicket:id="open">
+                                <img src="images/openDialoge.png" wicket:message="title:label.open" alt="O"
+                                     width="13px"/>
+                            </a>
+                        </td>
+                        <td style="padding-right:5px">
+                            <a wicket:id="clearAll">
+                                <img src="images/clearAll.png" wicket:message="title:label.clearAll" alt="X"
+                                     width="13px"/>
+                            </a>
+                        </td>
+                        <td style="padding-right:5px">
+                            <img wicket:id="quickFind" src="images/openQuickDialoge.png"
+                                 wicket:message="title:label.quickFind" alt="Q" style="cursor:pointer" width="13px"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div wicket:id="holder" onmouseup="stopEventPropagation(event)" class="container-fluid">
+                    <table class="table selectionPanelList" style="position: absolute" wicket:id="selection" cellspacing="1" cellpadding="4"></table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</wicket:panel>

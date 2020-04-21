@@ -1,0 +1,42 @@
+<wicket:panel>
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="panel panel-primary" id="charts_env">
+
+                <div class="panel-heading">
+                    <div class="panel-title">مدیریت اعلان</div>
+
+                    <div class="panel-options">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a wicket:id="anouncementList_lbl" href="#users-group-1" data-toggle="tab">لیست اعلان</a></li>
+                            <li class=""><a wicket:id="createAnouncement_lbl" href="#users-group-2" data-toggle="tab">ایجاد اعلان</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane active" id="users-group-1" wicket:id="anouncementListDiv">
+                            <div id="users-group-1-demo" class="morrischart">
+                                <div wicket:id="anouncementListPanel"/>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="users-group-2" wicket:id="createAnouncementDiv">
+                            <div id="users-group-2-demo" class="morrischart">
+                                <div wicket:id="createAnouncementPanel"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</wicket:panel>

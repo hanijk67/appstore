@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <param name="maxFileSize" value="10000KB" />
+        <param name="maxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-5p %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="MAIN" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="${catalina.home}/logs/appStore_main.log"/>
+        <param name="maxFileSize" value="10000KB" />
+        <param name="maxBackupIndex" value="5" />
+        <param name="datePattern" value=".yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] (%-9t %d) %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org.apache.wicket">
+        <level value="OFF"/>
+    </logger>
+
+    <logger name="org.hibernate" additivity="false">
+        <level value="ERROR"/>
+        <appender-ref ref="MAIN"/>
+    </logger>
+
+    <logger name="com.fanap">
+        <level value="DEBUG"/>
+        <appender-ref ref="MAIN"/>
+    </logger>
+
+    <logger name="org.quartz" additivity="false">
+        <level value="ERROR"/>
+    </logger>
+
+    <root>
+        <level value="OFF"/>
+        <appender-ref ref="console"/>
+    </root>
+
+</log4j:configuration>

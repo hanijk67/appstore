@@ -1,0 +1,90 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+    <div wicket:id="modal">Modal</div>
+
+    <div class="container-fluid text-center">
+
+        <form class="form-inline" wicket:id="form">
+            <table class="form">
+                <tr>
+                    <th>
+                        <wicket:message key="Anouncement.text"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="anouncementText"/></td>
+
+                    <th>
+                        <wicket:message key="Anouncement.type"/>
+                    </th>
+                    <td>
+                        <div wicket:id="anouncementType"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="Anouncement.actionCategory"/>
+                    </th>
+                    <td>
+                        <div wicket:id="actionCategory"/>
+                    </td>
+
+
+                    <th>
+                        <wicket:message key="Anouncement.organizations"/>
+                    </th>
+                    <td>
+                    <td wicket:id="organizations"/>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th><wicket:message key="OSType"/></th>
+                    <td><div wicket:id="osTypes"/></td>
+
+                    <th>
+                        <wicket:message key="Anouncement.startDateTime"/>
+                    </th>
+                    <td style="padding-left: 10px">
+                        <div wicket:id="startDateTime"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="Anouncement.expireDateTime"/>
+                    </th>
+                    <td style="padding-left: 10px">
+                        <div style="margin-left: 10px" wicket:id="expireDateTime"/>
+                    </td>
+                    <td colspan="2"/>
+
+
+                    <!--<th><wicket:message key="label.active"/></th>-->
+                    <!--<td>-->
+                    <!--<div wicket:id="isActive"/>-->
+                    <!--</td>-->
+                </tr>
+                <tr>
+
+                    <th>
+                        <wicket:message key="Anouncement.environment"/>
+                    </th>
+                    <td>
+                    <td wicket:id="osEnvironments"/>
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td align="center" colspan="6" style="padding: 10px">
+                        <input style="padding: 10px" class="btn" type="button" wicket:id="search"
+                               wicket:message="value:label.search"/>
+                        <input style="padding: 10px" class="btn" type="button" wicket:id="reset"
+                               wicket:message="value:label.reset"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input class="btn" type="button" wicket:id="add" wicket:message="value:label.add"/>
+        <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]</table>
+        <input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/>
+    </div>
+</wicket:panel>

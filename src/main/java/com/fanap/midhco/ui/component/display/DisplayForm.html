@@ -1,0 +1,45 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+    <div wicket:id="modal">Modal</div>
+
+    <div class="container-fluid text-center">
+
+        <form class="form-inline form-inline-padding" wicket:id="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div wicket:id="rows">
+                        <div class="col-lg-4">
+                            <div class="boxitems">
+
+                                <!--<div>-->
+                                    <!--<span wicket:id="fileName"/>-->
+                                <!--</div>-->
+                                <div >
+                                    <img style="padding-top: 25px; height: 231px;" wicket:id="image" align="center"
+                                         class="img-responsive" alt="" width="1000"
+                                         height="1000">
+
+                                </div>
+
+                                <div>
+                                    <video style="padding-top: 25px;height: 231px;" wicket:id="video" align="center"
+                                           class="img-responsive" alt="" width="1000"
+                                           height="1000"/>
+
+                                </div>
+
+                                <div class="selectitem">
+                                    <input type="checkbox" wicket:id="selectedItem">
+                                    <span wicket:id="checkboxText">&nbsp;</span>
+                                    </input>
+                                    <!--<span><wicket:message key="label.delete"/></span>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</wicket:panel>

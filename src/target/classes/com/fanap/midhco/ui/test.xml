@@ -1,0 +1,32 @@
+<manifest versionCode="1" versionName="1.0" package="com.fanap.midhco.appstore" platformBuildVersionCode="23"
+          platformBuildVersionName="6.0-2704002">
+    <uses-sdk minSdkVersion="8" targetSdkVersion="23"></uses-sdk>
+    <uses-permission name="android.permission.INTERNET"></uses-permission>
+    <uses-permission name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <uses-permission name="android.permission.INSTALL_PACKAGES"></uses-permission>
+    <uses-permission name="android.permission.WRITE_SYNC_SETTINGS"></uses-permission>
+    <uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission name="android.permission.WAKE_LOCK"></uses-permission>
+    <uses-permission name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <application theme="2131296397" label="2131099669" icon="2130903040"
+                 name="com.android.tools.fd.runtime.BootstrapApplication" debuggable="resourceID 0xffffffff"
+                 allowBackup="resourceID 0xffffffff" supportsRtl="resourceID 0xffffffff"
+                 name="com.fanap.midhco.appstore.Config.AppConfiguration">
+        <activity name="com.fanap.midhco.appstore.MainActivity">
+            <intent-filter>
+                <action name="android.intent.action.MAIN"></action>
+                <category name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity name="com.fanap.midhco.appstore.Activity.ProductActivity"></activity>
+        <activity name="com.fanap.midhco.appstore.Activity.UpdatesActivity"></activity>
+        <receiver name="com.fanap.midhco.appstore.Service.BootUpReceiver"
+                  permission="android.permission.RECEIVE_BOOT_COMPLETED" enabled="resourceID 0xffffffff">
+            <intent-filter>
+                <action name="android.intent.action.BOOT_COMPLETED"></action>
+                <category name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

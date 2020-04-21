@@ -1,0 +1,81 @@
+.card {
+    border: 0;
+    border-radius: 2px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    border: solid 1px #eee;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px #dadada;
+}
+.card-data{    border-top: solid 1px #eee;  padding: 10px 0 0 0;}
+.card .view {
+    text-align: center;
+    height: 125px;
+}
+.fa-picture-o{
+    font-size: 123px !important;
+    color: #eee !important;
+}
+.card .card-block {
+    position: relative;
+}
+.searchtop{
+    background: rgba(255, 255, 255, 0.22);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    float: right;
+    padding: 0 15px;
+    height: 40px;
+    position: relative;
+    width: 40%;
+    z-index: 1;
+    float: right;
+    margin: 12px 100px 0 0;
+    border-radius: 40px;
+    direction: rtl;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ebe5e2;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #ebe5e2;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #ebe5e2;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #ebe5e2;
+}
+.card-block {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-block p {
+    margin-bottom: 1rem;
+    text-align: center;
+    max-height: 55px;
+    overflow: hidden;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    text-align: center;
+}

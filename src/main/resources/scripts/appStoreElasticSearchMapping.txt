@@ -1,0 +1,1574 @@
+PUT http://localhost:9200/appstore
+{
+    {
+      "appstore": {
+        "mappings": {
+          "timeLine": {
+            "properties": {
+              "creationDate": {
+                "type": "long"
+              },
+              "creatorUserId": {
+                "type": "long"
+              },
+              "creatorUserName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "endShowTimeLine": {
+                "type": "long"
+              },
+              "fileType": {
+                "type": "long"
+              },
+              "fileVOList": {
+                "properties": {
+                  "fileId": {
+                    "type": "long"
+                  },
+                  "fileKey": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "fileName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "fileType": {
+                    "type": "long"
+                  },
+                  "selected": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "keywords": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "lastModificationDate": {
+                "type": "long"
+              },
+              "lastModificationUserId": {
+                "type": "long"
+              },
+              "lastModificationUserName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "organizationId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "organizationNickName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "showInChild": {
+                "type": "boolean"
+              },
+              "startDateTime": {
+                "properties": {
+                  "dayDate": {
+                    "properties": {
+                      "date": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "dayTime": {
+                    "properties": {
+                      "dayTime": {
+                        "type": "long"
+                      },
+                      "hour": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "startShowTimeLine": {
+                "type": "long"
+              },
+              "timeLineDescription": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "title": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "complaint": {
+            "properties": {
+              "complaintId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "developerId": {
+                "type": "long"
+              },
+              "lastModifyDate": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "relatedAppId": {
+                "type": "long"
+              },
+              "senderUserId": {
+                "type": "long"
+              },
+              "subject": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "appRelevancyRate": {
+            "properties": {
+              "appComparedToId": {
+                "type": "long"
+              },
+              "appId": {
+                "type": "long"
+              },
+              "relevancyRate": {
+                "type": "integer"
+              }
+            }
+          },
+          "favoriteApp": {
+            "properties": {
+              "appId": {
+                "type": "long"
+              },
+              "favoriteAppId": {
+                "type": "text"
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "lastModifyDate": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "modifyDateTime": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "osTypeId": {
+                "type": "long"
+              },
+              "userId": {
+                "type": "long"
+              }
+            }
+          },
+          "appInstall": {
+            "properties": {
+              "action": {
+                "type": "text"
+              },
+              "appId": {
+                "type": "long"
+              },
+              "appName": {
+                "type": "keyword"
+              },
+              "appPackageId": {
+                "type": "long"
+              },
+              "appPackageName": {
+                "type": "keyword"
+              },
+              "appPackageVersionCode": {
+                "type": "keyword"
+              },
+              "appPackageVersionName": {
+                "type": "keyword"
+              },
+              "appTitle": {
+                "type": "keyword"
+              },
+              "deviceId": {
+                "type": "keyword"
+              },
+              "osId": {
+                "type": "long"
+              },
+              "osName": {
+                "type": "keyword"
+              },
+              "osTypeId": {
+                "type": "long"
+              },
+              "osTypeName": {
+                "type": "keyword"
+              },
+              "osVersion": {
+                "type": "keyword"
+              },
+              "time": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "userId": {
+                "type": "long"
+              },
+              "userName": {
+                "type": "keyword"
+              }
+            }
+          },
+          "commentLike": {
+            "_parent": {
+              "type": "comment"
+            },
+            "_routing": {
+              "required": true
+            },
+            "properties": {
+              "dislikeCategory": {
+                "type": "integer"
+              },
+              "fullName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "like": {
+                "type": "boolean"
+              },
+              "modifyDateTime": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "parentCommentId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "userId": {
+                "type": "long"
+              },
+              "userName": {
+                "type": "keyword"
+              }
+            }
+          },
+          "product": {
+            "properties": {
+              "appCategoryId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "appCategoryName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "appPackageVOs": {
+                "properties": {
+                  "changesLog": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "fileSize": {
+                    "type": "long"
+                  },
+                  "iconFileKey": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "iconFileName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "id": {
+                    "type": "long"
+                  },
+                  "minSDK": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "packageFileKey": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "packageFileName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "permissionDetails": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "targetSDK": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "thumbFiles": {
+                    "properties": {
+                      "fileId": {
+                        "type": "long"
+                      },
+                      "fileKey": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "fileName": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "selected": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "versionName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  }
+                }
+              },
+              "complaintEmail": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "createDateTime": {
+                "type": "long"
+              },
+              "creationDateTime": {
+                "properties": {
+                  "dayDate": {
+                    "properties": {
+                      "date": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "dayTime": {
+                    "properties": {
+                      "dayTime": {
+                        "type": "long"
+                      },
+                      "hour": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "creatorId": {
+                "type": "long"
+              },
+              "creatorUserName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "developerId": {
+                "type": "long"
+              },
+              "developerName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "isDeleted": {
+                "type": "boolean"
+              },
+              "keywords": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "lastModificationDateTime": {
+                "type": "long"
+              },
+              "mainAppPackageVO": {
+                "properties": {
+                  "changesLog": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "fileSize": {
+                    "type": "long"
+                  },
+                  "iconFileKey": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "iconFileName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "id": {
+                    "type": "long"
+                  },
+                  "lastModifyDate": {
+                    "type": "long"
+                  },
+                  "minSDK": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "packageFileKey": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "packageFileName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "permissionDetails": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "targetSDK": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "thumbFiles": {
+                    "properties": {
+                      "fileId": {
+                        "type": "long"
+                      },
+                      "fileKey": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "fileName": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "selected": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "versionCode": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  },
+                  "versionName": {
+                    "type": "text",
+                    "fields": {
+                      "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                      }
+                    }
+                  }
+                }
+              },
+              "osId": {
+                "type": "long"
+              },
+              "osName": {
+                "type": "keyword"
+              },
+              "osTypeId": {
+                "type": "long"
+              },
+              "osTypeName": {
+                "type": "keyword"
+              },
+              "packageName": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "properties": {
+                "properties": {
+                  "appCategoryId": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "appCategoryName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "appPackageVOs": {
+                    "properties": {
+                      "properties": {
+                        "properties": {
+                          "iconFileKey": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "iconFileName": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "id": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "packageFileKey": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "packageFileName": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "thumbFiles": {
+                            "properties": {
+                              "properties": {
+                                "properties": {
+                                  "fileId": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "fileKey": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "fileName": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "versionName": {
+                            "properties": {
+                              "index": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              },
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "creationDateTime": {
+                    "properties": {
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "creatorUserName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "developerName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "id": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "isDeleted": {
+                    "properties": {
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "lastModificationDateTime": {
+                    "properties": {
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "mainAppPackageVO": {
+                    "properties": {
+                      "properties": {
+                        "properties": {
+                          "iconFileKey": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "iconFileName": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "id": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "lastModificationDateTime": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "packageFileKey": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "packageFileName": {
+                            "properties": {
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "thumbFiles": {
+                            "properties": {
+                              "properties": {
+                                "properties": {
+                                  "fileId": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "fileKey": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "fileName": {
+                                    "properties": {
+                                      "type": {
+                                        "type": "text",
+                                        "fields": {
+                                          "keyword": {
+                                            "type": "keyword",
+                                            "ignore_above": 256
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "versionCode": {
+                            "properties": {
+                              "index": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              },
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "versionName": {
+                            "properties": {
+                              "index": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              },
+                              "type": {
+                                "type": "text",
+                                "fields": {
+                                  "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "osId": {
+                    "properties": {
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "osName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "osTypeId": {
+                    "properties": {
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "osTypeName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "packageName": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "publishState": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "title": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "versionCode": {
+                    "properties": {
+                      "index": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      },
+                      "type": {
+                        "type": "text",
+                        "fields": {
+                          "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "publishState": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "title": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "versionCode": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              }
+            }
+          },
+          "appKeyWords": {
+            "properties": {
+              "appId": {
+                "type": "long"
+              },
+              "appPackageName": {
+                "type": "keyword"
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "keyword": {
+                "type": "text",
+                "analyzer": "hashSignAnalyzer"
+              },
+              "osId": {
+                "type": "long"
+              },
+              "osTypeId": {
+                "type": "long"
+              }
+            }
+          },
+          "commentApprove": {
+            "_parent": {
+              "type": "comment"
+            },
+            "_routing": {
+              "required": true
+            },
+            "properties": {
+              "approveDate": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "desc": {
+                "type": "text"
+              },
+              "description": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "hasUserDisLiked": {
+                "type": "boolean"
+              },
+              "isApproved": {
+                "type": "boolean"
+              },
+              "parentCommentId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "userId": {
+                "type": "long"
+              },
+              "userName": {
+                "type": "keyword"
+              }
+            }
+          },
+          "comment": {
+            "properties": {
+              "appId": {
+                "type": "long"
+              },
+              "appName": {
+                "type": "keyword"
+              },
+              "appPackageId": {
+                "type": "long"
+              },
+              "appPackageName": {
+                "type": "keyword"
+              },
+              "appPackageVersionCode": {
+                "type": "keyword"
+              },
+              "appPackageVersionName": {
+                "type": "keyword"
+              },
+              "appTitle": {
+                "type": "keyword"
+              },
+              "approvalDate": {
+                "type": "date"
+              },
+              "approved": {
+                "type": "boolean"
+              },
+              "commentId": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "commentText": {
+                "type": "keyword"
+              },
+              "deviceId": {
+                "type": "keyword"
+              },
+              "hasUserDisLiked": {
+                "type": "boolean"
+              },
+              "hasUserLiked": {
+                "type": "boolean"
+              },
+              "id": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "language": {
+                "type": "keyword"
+              },
+              "lastModifyDate": {
+                "type": "date",
+                "format": "epoch_millis"
+              },
+              "lastModifyDateDateTime": {
+                "properties": {
+                  "dayDate": {
+                    "properties": {
+                      "date": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "dayTime": {
+                    "properties": {
+                      "dayTime": {
+                        "type": "long"
+                      },
+                      "hour": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "osId": {
+                "type": "long"
+              },
+              "osName": {
+                "type": "keyword"
+              },
+              "osTypeId": {
+                "type": "long"
+              },
+              "osTypeName": {
+                "type": "keyword"
+              },
+              "osVersion": {
+                "type": "keyword"
+              },
+              "rateIndex": {
+                "type": "integer"
+              },
+              "userId": {
+                "type": "long"
+              },
+              "userName": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+}

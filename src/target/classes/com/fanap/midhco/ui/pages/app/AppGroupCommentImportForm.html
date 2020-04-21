@@ -1,0 +1,22 @@
+<wicket:panel>
+    <div wicket:id="modal">Modal</div>
+    <span wicket:id="feedbackPanel"/>
+    <form class="form-inline" wicket:id="form">
+        <table class="form">
+            <tr>
+                <th>
+                    <wicket:message key="app.comment.excel.file"/>
+                </th>
+                <td>
+                    <div wicket:id="ChooseExcelFile"/>
+                </td>
+
+            </tr>
+        </table>
+        <div style="padding-top: 10px" class="text-center">
+            <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+            <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+        </div>
+    </form>
+
+</wicket:panel>

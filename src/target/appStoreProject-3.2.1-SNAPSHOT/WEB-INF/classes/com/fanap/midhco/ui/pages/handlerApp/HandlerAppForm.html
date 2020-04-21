@@ -1,0 +1,132 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="container-fluid text-center">
+
+        <form role="form" class="form-inline" wicket:id="form">
+
+
+            <div style="display: table;width: 100%;">
+                <div class="col-lg-6">
+                    <h6 style="text-align: right"><span class="required">*</span>
+                        <wicket:message key="HandlerApp.versionCode"/>
+                    </h6>
+                    <input class="form-control" type="text" wicket:id="versionCode" spec="fa">
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="col-lg-6">
+                        <h6>
+                            <wicket:message key="label.active"/>
+                        </h6>
+                        <div wicket:id="isActive"/>
+                        <!--<input class="form-control" type="checkbox" wicket:id="isActive" spec="fa">-->
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="col-lg-6">
+                        <h6>
+                            <wicket:message key="HandlerApp.isDefault"/>
+                        </h6>
+                        <div wicket:id="isDefault" isDefault/>
+                        <!--<input class="form-control" type="checkbox" wicket:id="isActive" spec="fa">-->
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h6 style="text-align: right"><span class="required">*</span>
+                        <wicket:message key="HandlerApp.organization"/>
+                    </h6>
+                    <div wicket:id="organization"/>
+                </div>
+
+                <div class="col-lg-6">
+                    <h6 style="text-align: right"><span class="required">*</span>
+                        <wicket:message key="HandlerApp.os.osEnvironment"/>
+                    </h6>
+                    <div wicket:id="osEnvironment"/>
+                </div>
+
+            </div>
+            <div>
+
+            </div>
+            <div style="margin-bottom: 10px;">
+                <h6 style="text-align: right">
+                    <!--<wicket:message key="HandlerApp.handlerFile"/>-->
+                </h6>
+             <div class="col-md-12">
+                 <div class="col-md-6" wicket:id="handlerAppFile"/>
+                 <div class="col-md-6" wicket:id="handlerAppFile32Bit"/>
+             </div>
+            </div>
+
+            <table>
+                <tr class="blank_row"/>
+
+                <tr class="col-md-12">
+                    <th>
+                        <wicket:message key="HandlerApp.handlerAppDownloadPath"/>
+                    </th>
+                    <td readonly="true">
+                        <a wicket:id="handlerAppDownloadFilePath" target="_blank"><span wicket:id="link"/></a>
+                    </td>
+                </tr>
+
+                <tr class="col-md-12">
+                    <!--<th>-->
+                        <!--<wicket:message key="HandlerApp.handlerAppDownloadPath32Bit"/>-->
+                    <!--</th>-->
+                    <!---->
+                    <td>
+                        <label wicket:id="fileHandlerApp32BitLbl"/>
+                    </td>
+                    <td readonly="true">
+                        <a wicket:id="handlerAppDownloadFilePath32Bit" target="_blank"><span wicket:id="link32Bit"/></a>
+                    </td>
+                </tr>
+            </table>
+            <div>
+
+            </div>
+            <div id="contentIcon" style="margin-bottom: 10px;">
+                <h6 style="text-align: right">
+                    <!--<wicket:message key="HandlerApp.testHandlerFile"/>-->
+                </h6>
+               <div class="col-md-12">
+                   <div class="col-md-6" wicket:id="testHandlerAppFile"/>
+                   <div class="col-md-6" wicket:id="testHandlerAppFile32Bit"/>
+               </div>
+            </div>
+
+            <table>
+                <tr class="blank_row"/>
+                <tr class="col-md-12">
+                    <th>
+                        <wicket:message key="HandlerApp.testHandlerAppDownloadPath" style="align:center"/>
+                    </th>
+                    <td readonly="true">
+                        <a wicket:id="testHandlerAppDownloadFilePath" target="_blank"><span wicket:id="testLink"/></a>
+                    </td>
+                </tr>
+
+                <tr class="col-md-12">
+                    <!--<th>-->
+                        <!--<wicket:message key="HandlerApp.testHandlerAppDownloadPath32Bit"/>-->
+                    <!--</th>-->
+
+                    <td>
+                        <label wicket:id="testFileHandlerApp32BitLbl"/>
+                    </td>
+                    <td readonly="true">
+                        <a wicket:id="testHandlerAppDownloadFilePath32Bit" target="_blank"><span wicket:id="testLink32Bit"/></a>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="button" class="btn" wicket:id="save" value="submit" wicket:message="value:label.submit"/>
+            <input type="button" class="btn" wicket:id="cancel" value="cancel" wicket:message="value:label.cancel"/>
+        </form>
+    </div>
+</wicket:panel>

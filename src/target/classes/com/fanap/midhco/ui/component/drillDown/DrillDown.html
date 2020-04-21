@@ -1,0 +1,42 @@
+<wicket:panel xmlns:wicket="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>مرجع تخصصی برنامه نویسان</title>
+
+        <script type="text/javascript">
+            function insertAction(elementId, chartId, dataSource, index) {
+
+                FusionCharts.ready(function () {
+
+                    var child = document.getElementById('chart-container' + index);
+                    var baseId = '#' + elementId + ' #divId';
+                    if (child == null) {
+                        $('#' + elementId + ' #divId').append("<div id='chart-container" + index + "'></div>");
+                    }
+
+                    var simpleLinkChart = new FusionCharts({
+                        type: 'column2d',
+                        renderAt: chartId,
+                        width: '450',
+                        height: '280',
+                        dataFormat: 'json',
+
+                        dataSource: dataSource
+
+                    });
+                    simpleLinkChart.render();
+
+                });
+
+
+            }
+
+
+        </script>
+
+    </head>
+    <form wicket:id="form">
+        <div id="divId">
+        </div>
+    </form>
+
+</wicket:panel>

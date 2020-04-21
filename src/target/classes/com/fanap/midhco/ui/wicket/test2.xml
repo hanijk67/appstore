@@ -1,0 +1,92 @@
+<manifest versionCode="1" versionName="1.0" package="com.droidteam.catalogmobile.decolight"
+          platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <uses-sdk minSdkVersion="10" targetSdkVersion="23"></uses-sdk>
+    <uses-permission name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission name="android.permission.INTERNET"></uses-permission>
+    <uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission name="android.permission.VIBRATE"></uses-permission>
+    <permission name="com.droidteam.catalogmobile.permission.MAPS_RECEIVE" protectionLevel="2"></permission>
+    <uses-permission name="com.droidteam.catalogmobile.permission.MAPS_RECEIVE"></uses-permission>
+    <uses-feature glEsVersion="131072" required="resourceID 0xffffffff"></uses-feature>
+    <uses-permission name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission name="com.google.android.providers.gsf.permission.READ_GSERVICES"></uses-permission>
+    <uses-permission name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <permission name="com.droidteam.catalogmobile.permission.C2D_MESSAGE" protectionLevel="2"></permission>
+    <uses-permission name="com.droidteam.catalogmobile.permission.C2D_MESSAGE"></uses-permission>
+    <uses-permission name="com.google.android.c2dm.permission.RECEIVE"></uses-permission>
+    <uses-permission name="android.permission.WAKE_LOCK"></uses-permission>
+    <uses-permission name="android.permission.GET_ACCOUNTS"></uses-permission>
+    <uses-permission name="android.permission.USE_CREDENTIALS"></uses-permission>
+    <application theme="2131427459" label="2131165307" icon="2130903074"
+                 name="com.droidteam.catalogmobile.Config.AppConfiguration" debuggable="resourceID 0xffffffff"
+                 allowBackup="resourceID 0xffffffff" supportsRtl="resourceID 0xffffffff">
+        <supports-screens anyDensity="resourceID 0xffffffff" smallScreens="resourceID 0xffffffff"
+                          normalScreens="resourceID 0xffffffff" largeScreens="resourceID 0xffffffff"
+                          xlargeScreens="resourceID 0xffffffff"></supports-screens>
+        <activity name="com.droidteam.catalogmobile.MainActivity" screenOrientation="1">
+            <intent-filter>
+                <action name="android.intent.action.MAIN"></action>
+                <category name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <activity name="com.droidteam.catalogmobile.Activity.About.AboutActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.About.AboutCompanyActivity"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.About.ContactUsActivity" screenOrientation="1"></activity>
+        <meta-data name="com.google.android.maps.v2.API_KEY"
+                   value="AIzaSyABv4nW02p7vinnEKsUicVs3_Q8wGScicA"></meta-data>
+        <uses-library name="com.google.android.maps"></uses-library>
+        <activity name="com.droidteam.catalogmobile.Activity.Product.CategoryActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Product.ProductActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Product.ProductDescriptionActivity"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Gallery.GalleryActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.SettingActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.FacilityActivity"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Article.ArticleActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Article.ArticleDescriptionActivity"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Video.VideoActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Rss.NewsWebPage" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Rss.RssDescription" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Rss.XmlparseMain" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.CommentActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.ProjectActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.QrActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Product.FavoriteActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Product.SearchActivity" screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Gallery.GalleryDesciptionActivity"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.Activity.Facility.ZoomActivity" screenOrientation="1"></activity>
+        <receiver name="com.droidteam.catalogmobile.GCM.GcmBroadcastReceiver"
+                  permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action name="com.google.android.c2dm.intent.RECEIVE"></action>
+                <category name="com.icanappz.gcmimplementation"></category>
+            </intent-filter>
+        </receiver>
+        <meta-data name="com.google.android.gms.version" value="2131492869"></meta-data>
+        <service name="com.droidteam.catalogmobile.GCM.GcmIntentService"></service>
+        <activity name="com.droidteam.catalogmobile.Activity.News.NewsActivity" screenOrientation="1"></activity>
+        <activity theme="2131427573" name="com.droidteam.catalogmobile.GCM.DailogeNotice"
+                  screenOrientation="1"></activity>
+        <activity name="com.droidteam.catalogmobile.GCM.CustomeWebView" screenOrientation="1"></activity>
+        <activity theme="16973839" name="com.google.android.gms.ads.AdActivity" configChanges="4016"></activity>
+        <activity theme="2131427585" name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"></activity>
+        <activity theme="16973840" name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" exported="0"
+                  excludeFromRecents="resourceID 0xffffffff"></activity>
+        <provider name="com.google.android.gms.measurement.AppMeasurementContentProvider" exported="0"
+                  authorities="com.droidteam.catalogmobile.decolight.google_measurement_service"></provider>
+        <receiver name="com.google.android.gms.measurement.AppMeasurementReceiver" enabled="resourceID 0xffffffff">
+            <intent-filter>
+                <action name="com.google.android.gms.measurement.UPLOAD"></action>
+            </intent-filter>
+        </receiver>
+        <service name="com.google.android.gms.measurement.AppMeasurementService" enabled="resourceID 0xffffffff"
+                 exported="0"></service>
+    </application>
+</manifest>

@@ -1,0 +1,83 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div wicket:id="modal">Modal</div>
+    <center>
+        <form wicket:id="searchForm" autocomplete="off">
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="label.id"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="id"/></td>
+                    <th>
+                        <wicket:message key="User.username"/>
+                    </th>
+                    <td><input class="form-control" type="text" wicket:id="userName"/></td>
+                    <!--<th>-->
+                        <!--<wicket:message key="Contact.firstName"/>-->
+                    <!--</th>-->
+                    <!--<td><input class="form-control" type="text" wicket:id="firstName"/></td>-->
+                    <th>
+                        <wicket:message key="User.lastIp"/>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="lastIp"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="User.lastLoginDate"/>
+                    </th>
+                    <td>
+                        <div wicket:id="lastLoginDateTime"/>
+                    </td>
+                    <th>
+                        <wicket:message key="User.logged"/>
+                    </th>
+                    <td>
+                        <div wicket:id="logged"/>
+                    </td>
+                    <th>
+                        <wicket:message key="User.userStatus"/>
+                    </th>
+                    <td>
+                        <div wicket:id="statuses"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="User.roles"/>
+                    </th>
+                    <td>
+                        <div wicket:id="roles"/>
+                    </td>
+                    <th>
+                        <wicket:message key="label.createdDateTime"/>
+                    </th>
+                    <td>
+                        <div wicket:id="creationDateTime"/>
+                    </td>
+                    <th>
+                        <wicket:message key="label.creatorUser"/>
+                    </th>
+                    <td>
+                        <div wicket:id="creatorUsers"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" align="center">
+                        <input class="btn" type="button" wicket:id="search" wicket:message="value:label.search"/>
+                        <input class="btn" type="button" wicket:id="reset" wicket:message="value:label.reset"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input class="btn" type="button" wicket:id="createUser" wicket:message="value:label.create-user"/>
+        <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Users]</table>
+        <input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/>
+    </center>
+</wicket:panel>

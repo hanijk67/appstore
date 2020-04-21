@@ -1,0 +1,63 @@
+<wicket:panel>
+    <script>
+        function changeIcon(){
+            $('#contentIcon').slideToggle();
+        }
+    </script>
+
+    <span wicket:id="feedbackPabel"/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form wicket:id="form" style="min-width: 600px;">
+
+
+                <div style="display: table;width: 100%;">
+                    <div class="col-lg-6">
+                        <h6 style="text-align: right"><span class="required">*</span><wicket:message key="AppCategory.categoryName"/></h6>
+                                        <input class="form-control" type="text" wicket:id="categoryName" spec="fa">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="col-lg-6">
+                            <h6><wicket:message key="AppCategory.isEnabled"/></h6>
+                                        <input class="form-control" type="checkbox"  wicket:id="isEnabled" spec="fa">
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <h6><wicket:message key="AppCategory.isAssignable"/></h6>
+                                        <input class="form-control"  type="checkbox" wicket:id="isAssignable" spec="fa">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: table;width: 100%;">
+                    <div class="col-lg-6">
+                        <h6 style="text-align: right"><span class="required">*</span><wicket:message key="AppCategory.parent"/></h6>
+                                        <div wicket:id="parent"></div>
+                        <h6 style="text-align: right"><wicket:message key="AppCategory.selected.Parent"/> <span wicket:id="selectedParent"></span></h6>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <img style="width: 60px;" wicket:id="tmpIconFile"/>
+                        <div style="margin: 10px 0;"><a href="#" onClick="changeIcon()" class="btn btn-info">انتخاب آیکون</a></div>
+                    </div>
+                </div>
+
+                <div id="contentIcon" style="margin-bottom: 10px;display: none;">
+                    <!--
+                                        <h6 style="text-align: right"><wicket:message key="AppCategory.icon"/></h6>
+                    -->
+                                        <div wicket:id="iconFile"/>
+                </div>
+
+
+                            <input type="button" class="btn" wicket:id="save" value="submit"
+                                   wicket:message="value:label.submit"/>
+                            <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                                   wicket:message="value:label.cancel"/>
+            </form>
+        </div>
+    </div>
+</wicket:panel>

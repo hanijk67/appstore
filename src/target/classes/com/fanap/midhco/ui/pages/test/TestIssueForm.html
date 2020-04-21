@@ -1,0 +1,57 @@
+<wicket:panel>
+    <div wicket:id="feedbackPanel"/>
+    <div wicket:id="testIssueFormName"/>
+    <form wicket:id="form">
+        <table class="table">
+
+            <tr>
+                <th>
+                    <wicket:message key="TestIssue.title"/>
+                    <span class="required">*</span>
+                </th>
+                <td>
+                    <input type="text" class="form-control" spec="fa" wicket:id="title">
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <wicket:message key="TestIssue.approvalState"/>
+                    <span class="required">*</span>
+                </th>
+                <td>
+                    <div wicket:id="approvalState" style="text-align: center"/>
+                </td>
+
+                <th>
+                    <wicket:message key="TestIssue.priority"/>
+                    <span class="required">*</span>
+                </th>
+
+                <td>
+                    <div wicket:id="priority" style="text-align: center"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <wicket:message key="TestIssue.description"/>
+                    <span class="required">*</span>
+                </th>
+                <td colspan="8" style="width: 200px ; max-width: 200px">
+                    <div wicket:id="description"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" class="btn" wicket:id="save" value="submit"
+                           wicket:message="value:label.submit"/>
+                    <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                           wicket:message="value:label.cancel"/>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</wicket:panel>

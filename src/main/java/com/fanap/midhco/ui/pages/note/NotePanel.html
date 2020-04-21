@@ -1,0 +1,16 @@
+<wicket:panel>
+    <span wicket:id="feedback">[feedback]</span>
+    <center>
+        <form wicket:id="form" class="form" style="min-width: 500px">
+            <div class="col-sm-12">
+                <div wicket:id="generalNote"/>
+            </div>
+            <div class="col-sm-12" style="padding-top: 10px">
+                <input class="btn" type="submit" wicket:id="generalNote_confirm" wicket:message="value:label.confirm"/>
+                <input class="btn" type="button" wicket:id="cancel" wicket:message="value:label.cancel"/>
+            </div>
+            <br/>
+        </form>
+    </center>
+
+</wicket:panel>

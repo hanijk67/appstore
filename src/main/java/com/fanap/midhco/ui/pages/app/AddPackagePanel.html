@@ -1,0 +1,105 @@
+<wicket:panel>
+    <span wicket:id="feedbackPabel1"/>
+
+    <div class="row text-center">
+
+        <form class="form" wicket:id="form1">
+
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="APPPackage.versionCode"/>
+                    </th>
+                    <td>
+                        <input class="form-control" wicket:id="versionCode" />
+                    </td>
+
+                    <th>
+                        <wicket:message key="APPPackage.versionName"/>
+                    </th>
+                    <td>
+                        <input class="form-control" wicket:id="versionName" />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="APPPackage.minSDK"/>
+                    </th>
+
+                    <td>
+                        <input class="form-control" wicket:id="minSDK" />
+                    </td>
+
+                    <th>
+                        <wicket:message key="APPPackage.targetSDK"/>
+                    </th>
+                    <td>
+                        <input class="form-control" wicket:id="targetSDK" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="4" style="text-align: right">
+                        <wicket:message key="APPPackage.packFile"/>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="packFile"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label type="label" wicket:id="usePreviousFileLbl"/>
+                    </td>
+
+                    <td>
+                        <div wicket:id="usePreviousFile"/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th style="text-align: right">
+                        <wicket:message key="APPPackage.iconFile"/>
+                    </th>
+
+                    <td>
+                        <!--<button wicket:id="copyIconFromPrevPackage" class="btn btn-default btn-md"><wicket:message key="AppPackage.copyIconFromPreviousPackage"/></button>-->
+                    </td>
+
+                    <td colspan="2">
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="iconFile"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="1" style="text-align: right">
+                        <wicket:message key="APPPackage.thumbImages"/>
+                    </th>
+
+                    <td>
+                        <!--<button wicket:id="copyThumbsFromPrevPackage" class="btn btn-default btn-md"><wicket:message key="AppPackage.copyImagesFromPreviousPackage"/></button>-->
+                    </td>
+
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="thumbImages"/>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</wicket:panel>

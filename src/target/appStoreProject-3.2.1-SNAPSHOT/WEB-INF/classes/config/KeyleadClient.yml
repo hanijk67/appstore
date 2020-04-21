@@ -1,0 +1,4 @@
+DefaultKeyleadConfig: {oauth.endpoint.token.revoke: 'http://sandbox.fanapium.com/oauth2/token/revoke',
+  oauth.endpoint.authorization: 'http://sandbox.fanapium.com/oauth2/authorize/', keylead.jwt.publickey.der: keys/jwt_public_key.der,
+  keylead.endpoint.user: 'http://sandbox.fanapium.com/user', keylead.jwt.issuer: 'https://www.fanapium.com/',
+  oauth.endpoint.token.exchange: 'http://sandbox.fanapium.com/oauth2/token', oauth.endpoint.token.info: 'http://sandbox.fanapium.com/oauth2/token/info'}

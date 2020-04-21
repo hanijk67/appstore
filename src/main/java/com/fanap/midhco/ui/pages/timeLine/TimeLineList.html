@@ -1,0 +1,114 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+    <div wicket:id="modal">Modal</div>
+
+    <form class="form-inline" wicket:id="form" style="border: 1px solid lightgrey;padding: 20px;margin-left: 10px;">
+
+        <div>
+
+
+            <div class="row" style="padding: 5px">
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.title"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <input class="form-control" type="text" wicket:id="title"/>
+                </div>
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.fileType"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <div wicket:id="timeLineFileTypes"/>
+                </div>
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="label.active"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <div wicket:id="isActive"/>
+                </div>
+
+            </div>
+
+
+            <div class="row" style="padding: 5px">
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.showInChild"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <div wicket:id="showInChild"/>
+                </div>
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.searchInParents"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <div wicket:id="searchInParents"/>
+                </div>
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;padding-top: 18px">
+                    <wicket:message key="timeLine.startShowTimeLine"/>
+                </div>
+                <div class="col-lg-3 col-md-1 col-12" style="padding: 1px">
+                    <div wicket:id="startShowTimeLineDateTime"/>
+                </div>
+
+            </div>
+
+
+            <div class="row" style="padding: 5px">
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.timeLineDescription"/>
+                </div>
+                <div class="col-lg-11 col-md-11 col-12" style="padding: 1px">
+                    <div wicket:id="timeLineDescription"/>
+                </div>
+            </div>
+
+
+            <div class="row" style="padding: 5px">
+                <div class="col-lg-1 col-md-1 col-12" style="padding: 1px;text-align: left;">
+                    <wicket:message key="timeLine.keywords"/>
+                </div>
+                <div class="col-lg-11 col-md-11 col-12" style="padding: 1px;padding-right: 15px;">
+                    <div wicket:id="keywords"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12" style="border: 1px solid darkgray;">
+                    <div class="row" style="padding: 5px">
+                        <div class="col-lg-2 col-md-2 col-12" style="padding: 1px">
+                            <wicket:message key="organization"/>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-12" style="padding: 1px;">
+                            <div wicket:id="organization" style="max-height: 300px;overflow-y: scroll;overflow-x: hidden"/>
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding: 1px">
+                        <div class="col-lg-2 col-md-2 col-12" style="padding: 1px">
+                            <wicket:message key="selected.organization"/>
+                        </div>
+                        <div class="col-lg-6 col-md-5 col-12" style="padding: 1px">
+                            <span wicket:id="selectedOrganization"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" style="padding: 20px">
+            <div class="col-lg-3 col-md-1 col-12">
+                <input style="padding: 10px;background-color: lightskyblue; color: black;" class="btn" type="button"
+                       wicket:id="search" wicket:message="value:label.search"/>
+                <input style="padding: 10px" class="btn" type="button" wicket:id="reset"
+                       wicket:message="value:label.reset"/>
+            </div>
+
+        </div>
+
+    </form>
+    <input class="btn" style="text-align: right ;margin-top: 10px;background-color: lightskyblue; color: black;" type="button" wicket:id="add" wicket:message="value:label.add"/>
+    <table class="table list" cellspacing="1" cellpadding="6" wicket:id="table">[Table]</table>
+    <input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/>
+</wicket:panel>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="connection.autocommit">false</property>
+        <property name="connection.isolation">2</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">30</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.maxStatementsPerConnection">12</property>
+        <property name="hibernate.c3p0.testConnectionOnCheckOut ">false</property>
+        <property name="hibernate.c3p0.testConnectionOnCheckin">true</property>
+        <property name="hibernate.c3p0.idle_test_period">20</property>
+
+        <property name="hibernate.c3p0.maxIdleTimeExcessConnections">180</property>
+
+        <property name="hibernate.c3p0.automaticTestTable">true</property>
+
+        <property name="hibernate.c3p0.numHelperThreads.maxAdministrativeTaskTime">8</property>
+        <property name="hibernate.c3p0.numHelperThreads">10</property>
+
+        <property name="connection.useUnicode">true</property>
+        <property name="connection.characterEncoding">utf-8</property>
+
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+        <property name="cache.use_query_cache">true</property>
+        <property name="cache.use_second_level_cache">true</property>
+
+        <property name="jdbc.batch_size">0</property>
+        <property name="jdbc.fetch_size">20</property>
+        <property name="jdbc.wrap_result_sets">true</property>
+        <!-- ===================================================== -->
+        <mapping class="com.fanap.midhco.appstore.entities.App"/>
+        <mapping class="com.fanap.midhco.appstore.entities.AppPackage"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Comment"/>
+        <mapping class="com.fanap.midhco.appstore.entities.File"/>
+        <mapping class="com.fanap.midhco.appstore.entities.OS"/>
+        <mapping class="com.fanap.midhco.appstore.entities.OSType"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Rate"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Role"/>
+        <mapping class="com.fanap.midhco.appstore.entities.User"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Country"/>
+        <mapping class="com.fanap.midhco.appstore.entities.State"/>
+        <mapping class="com.fanap.midhco.appstore.entities.City"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Note"/>
+        <mapping class="com.fanap.midhco.appstore.entities.AppCategory"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Device"/>
+        <mapping class="com.fanap.midhco.appstore.entities.TestGroup"/>
+        <mapping class="com.fanap.midhco.appstore.entities.TestIssue"/>
+        <mapping class="com.fanap.midhco.appstore.entities.TestSubIssue"/>
+        <mapping class="com.fanap.midhco.appstore.entities.AppHistory"/>
+        <mapping class="com.fanap.midhco.appstore.entities.AppPackageHistory"/>
+        <mapping class="com.fanap.midhco.appstore.entities.TestIssueHistory"/>
+        <mapping class="com.fanap.midhco.appstore.entities.HandlerApp"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Anouncement"/>
+        <mapping class="com.fanap.midhco.appstore.entities.AppInstallReportQueue"/>
+        <mapping class="com.fanap.midhco.appstore.entities.PackagePublish"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Organization"/>
+        <mapping class="com.fanap.midhco.appstore.entities.Contact"/>
+        <mapping class="com.fanap.midhco.appstore.entities.OSEnvironment"/>
+        <mapping class="com.fanap.midhco.appstore.entities.FlagForInsertData"/>
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.Issue"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.AppTestIssue"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.ChoiceTestStepType"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.DescriptionTestStepType"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.TestProfile"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.TestStep"/>-->
+        <!--<mapping class="com.fanap.midhco.appstore.entities.issue.testIssue.YESNOTestStepType"/>-->
+    </session-factory>
+</hibernate-configuration>

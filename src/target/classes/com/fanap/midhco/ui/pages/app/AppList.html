@@ -1,0 +1,82 @@
+<wicket:panel>
+    <div wicket:id="modal">Modal</div>
+    <center>
+        <form wicket:id="searchForm" autocomplete="off">
+            <table class="form">
+                <tr>
+                    <th><wicket:message key="App.title"/></th>
+                    <td><input class="form-control" type="text" wicket:id="title"/></td>
+
+                    <th><wicket:message key="App.appPackageName"/></th>
+                    <td><input class="form-control" type="text" wicket:id="packageName"/></td>
+
+                    <th><wicket:message key="App.developer"/></th>
+                    <td><div wicket:id="developers"/></td>
+
+                </tr>
+
+                <tr>
+
+                    <th><wicket:message key="APPPackage.versionCode"/></th>
+                    <td><input class="form-control" type="text" wicket:id="versionCode"/></td>
+
+                    <th><wicket:message key="APPPackage.versionName"/></th>
+                    <td><input class="form-control" type="text" wicket:id="versionName"/></td>
+
+                    <th><wicket:message key="label.creatorUser"/></th>
+                    <td><div wicket:id="creatorUsers"/></td>
+
+
+                </tr>
+
+                <tr>
+
+                    <th><wicket:message key="OSType"/></th>
+                    <td><div wicket:id="osType"/></td>
+
+                    <th><wicket:message key="OS"/></th>
+                    <td><div wicket:id="os"/></td>
+
+                    <th><wicket:message key="label.createdDateTime"/></th>
+                    <td style="padding-left: 10px"><div wicket:id="creationDateTime"/></td>
+
+
+                </tr>
+
+                <tr>
+                    <th><wicket:message key="APPPackage.publishState"/></th>
+                    <td>
+                        <div wicket:id="publishStates"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="AppCategory"/>
+                    </th>
+                    <td>
+                        <div wicket:id="appCategory"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="App.keyWords"/>
+                    </th>
+                    <td>
+                        <div wicket:id="tagsinput" style="max-width: 400px"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" colspan="6" style="padding: 10px">
+                        <input style="padding: 10px" class="btn" type="button" wicket:id="search" wicket:message="value:label.search"/>
+                        <input style="padding: 10px" class="btn" type="button" wicket:id="preShow" wicket:message="value:label.pre.show"/>
+
+                        <input style="padding: 10px" class="btn" type="button" wicket:id="createAnouncement" wicket:message="value:label.submit"/>
+                        <input style="padding: 10px"class="btn" type="button" wicket:id="reset" wicket:message="value:label.reset"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <input class="btn" type="button" wicket:id="add" wicket:message="value:label.add"/>
+        <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]</table>
+        <input class="btn" type="button" wicket:id="select" wicket:message="value:label.select"/>
+    </center>
+</wicket:panel>

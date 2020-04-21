@@ -1,0 +1,31 @@
+<wicket:panel>
+
+    <span wicket:id="feedbackPabel"/>
+
+    <form wicket:id="form">
+        <table width="95%" class="form">
+            <tr>
+                <td width="40%">
+                    <table width="100%">
+                        <tr>
+                            <td><wicket:message key="Role.name"/><span class="required">*</span></td>
+                            <td><input class="form-control" type="text" wicket:id="name" spec="fa"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div wicket:id="accessCodes"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" class="btn" wicket:id="save" value="submit"
+                           wicket:message="value:label.submit"/>
+                    <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                           wicket:message="value:label.cancel"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</wicket:panel>

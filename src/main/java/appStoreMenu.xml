@@ -1,0 +1,61 @@
+<menu:appStoreMenuPanel xmlns:menu="http://www.example.org/menu">
+    <menus>
+        <title>لیست کاربران</title>
+        <idCode>1</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.user.UserList</menuClass>
+    </menus>
+    <menus>
+        <title>لیست نقش ها</title>
+        <idCode>2</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.role.RoleList</menuClass>
+    </menus>
+    <menus>
+        <title>مدیریت پارسر</title>
+        <idCode>3</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.os.OSManagement</menuClass>
+    </menus>
+    <menus>
+        <title>مدیریت برنامه ها</title>
+        <idCode>4</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.app.AppList</menuClass>
+    </menus>
+    <menus>
+        <title>مدیریت دسته بندی</title>
+        <idCode>5</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.appcategory.AppCategoryList</menuClass>
+    </menus>
+    <menus>
+        <title>مدیریت دستگاهها</title>
+        <idCode>6</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.device.DevList</menuClass>
+    </menus>
+
+    <menus>
+        <title>اعلان ها</title>
+        <idCode>7</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.anouncement.AnouncementManagement</menuClass>
+    </menus>
+
+    <menus>
+        <title>مدیریت سازمان ها</title>
+        <idCode>8</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.org.OrgList</menuClass>
+    </menus>
+
+    <menus>
+        <title>مدیریت محیط اجرایی</title>
+        <idCode>9</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.environment.EnvironmentList</menuClass>
+    </menus>
+
+    <menus>
+        <title>مدیریت تایم لاین</title>
+        <idCode>10</idCode>
+        <menuClass>com.fanap.midhco.ui.pages.timeLine.TimeLineList</menuClass>
+    </menus>
+    <menus>
+        <title>سلام</title>
+        <idCode>11</idCode>
+        <menuClass>com.fanap.midhco.ui.wicket.jafarnezhad.Hani</menuClass>
+    </menus>
+</menu:appStoreMenuPanel>

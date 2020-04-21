@@ -1,0 +1,75 @@
+<wicket:panel>
+    <div wicket:id="modal">Modal</div>
+
+    <span wicket:id="feedbackPabel"/>
+
+    <div class="container-fluid text-center">
+
+        <form role="form" class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="OS.osName"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="osName" spec="fa">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="OS.osCode"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="osCode" spec="fa">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <wicket:message key="OS.osVersion"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="osVersion" spec="fa">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="OS.osType"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <div wicket:id="osType"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="label.disable.verb"/>
+                    </th>
+                    <td style="margin-left: 10px" wicket:id="disable"></td>
+                </tr>
+
+            </table>
+            <div>
+                <div>
+                    <label wicket:id="handlerAppLable"/>
+                </div>
+                <div>
+                    <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]</table>
+                </div>
+            </div>
+            <div style="padding-top: 10px" class="text-center">
+                <input class="btn" type="button" wicket:id="listLauncher" wicket:message="value:label.list.launcher"/>
+
+                <input class="btn" type="button" wicket:id="add" wicket:message="value:label.add.launcher"/>
+
+                <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+                <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

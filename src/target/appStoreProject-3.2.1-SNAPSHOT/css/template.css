@@ -1,0 +1,282 @@
+body {
+    background-color: #f3f3f3;
+    margin: 0;
+}
+
+img {
+    border-width: 0;
+}
+
+img.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+td.middleImage {
+    text-align: center;
+    padding-left: 7px;
+}
+
+td.alignRight {
+    text-align: right;
+}
+
+.mainHeader {
+    background: url("../images/header/bgImg.png") repeat-x;
+}
+
+textarea {
+    border: inherit;
+    font: inherit;
+    background: inherit;
+}
+
+td.page_header {
+    background: url("../images/header/header.jpg") repeat-x;
+}
+
+td.logo {
+    background: url("../images/portalmainheader.png") no-repeat;
+}
+
+td.childContent {
+    vertical-align: top;
+    padding: 0 20px 10px 10px;
+}
+
+#msgHolder {
+    position: absolute;
+    visibility: hidden;
+    padding: 5px;
+    background-color: #ccff00;
+    -moz-border-radius: 10px;
+    text-align: center;
+    opacity: 0.8;
+    left: 40%;
+    width: 20%;
+    top: 110px;
+}
+
+/*Help Styles*/
+#helpDarkBack {
+    z-index: 1999999999;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#helpDarkPanel {
+    -moz-border-radius: 20px;
+    opacity: 0.7;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 2000000000;
+    background-color: black;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+}
+
+#helpDarktable {
+    z-index: 2000000001;
+    width: 70%;
+    top: 15%;
+    left: 15%;
+    border: 1px solid yellow;
+    position: absolute;
+    color: yellow;
+    font-size: 12px;
+}
+
+td.helpCell {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    direction: ltr;
+    text-align: center;
+    vertical-align: middle;
+    color: yellow;
+    border-color: yellow;
+    border-width: 1px;
+}
+
+/*<<<<<<<<<<<<<<<<<<<<<<Elements>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+input, input.disabled {
+    padding: 2px 5px;
+    border: 1px #7A8A99 solid;
+    font-family: Tahoma, serif;
+}
+
+input.disabled {
+    background-color: #cccccc;
+    color: #777777;
+}
+
+.disabled {
+    background-color: #cccccc;
+    color: #777777;
+}
+
+textarea {
+    -moz-border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px #7A8A99 solid;
+    font-size: 13px;
+    font-family: Tahoma, serif;
+    background-color: #FFFFFF;
+}
+
+input.search {
+    background: url('../images/lSearch2.png') no-repeat left;
+}
+
+select {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border: 1px #7A8A99 solid;
+    font-size: 13px;
+    font-family: Tahoma, serif;
+}
+
+/*.btn {*/
+/*padding-left: 25px;*/
+/*padding-right: 25px;*/
+/*-moz-border-radius: 0px;*/
+/*background-image: url("../images/buttonbg.jpg");*/
+/*font-family: Tahoma, serif;*/
+/*font-weight: 600;*/
+/*font-size: 10px;*/
+/*height: 20px;*/
+/*margin-top: 5px;*/
+/*cursor: pointer;*/
+/*}*/
+
+.loginbtn {
+    padding-left: 25px;
+    padding-right: 25px;
+    -moz-border-radius: 3px;
+    border-color: #ffffff;
+    /*-moz-border-bottom-colors:*/
+    /*background-image: url("../images/buttonbg.jpg");*/
+    font-family: Tahoma, serif;
+    font-weight: 600;
+    font-size: 10px;
+    height: 49px;
+    /*margin-top: 5px;*/
+    cursor: pointer;
+    background-color: #ff6633;
+    color: #ffffff;
+}
+
+/*.btn:active {*/
+/*-moz-border-radius: 0px;*/
+/*background-image: url("../images/buttonbg_rev.jpg");*/
+/*font-family: Tahoma, serif;*/
+/*font-weight: 600;*/
+/*font-size: 10px;*/
+/*height: 20px;*/
+/*margin-top: 5px;*/
+/*cursor: pointer;*/
+/*}*/
+
+.error {
+    font-size: 20px;
+    font-family: Tahoma, serif;
+    color: red;
+}
+
+.required {
+    font-size: 12px;
+    color: red;
+}
+
+.indx {
+    width: 10px;
+    text-align: center;
+}
+
+/*===== DropDownDiv Classes =====*/
+div.dropDownDiv {
+    visibility: hidden;
+    background-color: white;
+    border: 1px black solid;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    text-align: right;
+    direction: rtl;
+    border-color: #ebebeb;
+}
+
+div.scrollableDropDownDiv {
+    height: 150px;
+    overflow-y: scroll;
+    text-align: right;
+    direction: rtl;
+}
+
+table.opener {
+    padding-bottom: 1px;
+    padding-top: 1px;
+    padding-right: 5px;
+    background-color: white;
+    border: 1px #7A8A99 solid;
+    border-color: #ebebeb;
+}
+
+table.opener td.handler {
+    padding-right: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.littleBtn {
+    width: 10px;
+    height: 15px;
+    font-size: 10px
+}
+
+.likeTxt {
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    border: 1px white;
+}
+
+.perm_denied {
+    color: red;
+    font-weight: bold;
+}
+
+.perm_fromRole {
+    color: blue;
+    font-weight: bold;
+}
+
+.perm_selected {
+    color: green;
+    font-weight: bold;
+}
+
+a.menuItem {
+    color: black;
+    text-decoration: none;
+}
+
+input[disabled='disabled'] {
+    background: yellow;
+    color: #0000ff;
+    cursor: default;
+}

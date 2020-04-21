@@ -1,0 +1,20 @@
+.jqititle{
+    text-align: right;
+    font-family: tahoma;
+}
+
+.jqimessage {
+    font-family: tahoma;
+    direction: rtl;
+    text-align: right;
+}
+
+.panel-body {
+    overflow-x: auto;
+}
+
+legend {
+    font-family: tahoma;
+    font-size: small;
+}
+

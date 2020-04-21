@@ -1,0 +1,66 @@
+<wicket:panel xmlns="http://wicket.apache.org">
+    <div class="col-sm-12" wicket:id="appDevicePanel">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="background-color: tan">
+                <div class="panel-title">
+                    <h4>
+                        انتخاب دستگاه
+                    </h4>
+                </div>
+                <div class="panel-options">
+                    <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a>
+                </div>
+            </div>
+
+            <div class="panel-body no-padding">
+                <div style="min-height: 100px;width: 98%;" wicket:id="deviceList"/>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <form wicket:id="form">
+            <table>
+                <tr>
+                    <Label style="margin: 10px ; margin-left: 30px;" wicket:id="title"/>
+                    <Label wicket:id="priority"/>
+                    <div style="margin-top: 20px;" wicket:id="testIssueDescriptionLbl"/>
+                    <div disabled="disabled" readonly="readonly" jid="historyMessageId" class=" rtl "
+                         style="padding: 5px; border: solid 1px;border-color: rgba(178, 186, 184, 0.76);text-align: right">
+                        <p ng-bind-html="htmlHistoryMessage"></p>
+                    </div>
+                </tr>
+
+                <tr>
+                    <div style="margin-top: 30px" wicket:id="testSubIssueDescriptionLbl"/>
+                    <div wicket:id="subIssueDescription"/>
+                </tr>
+
+                <tr style="padding: 20px">
+                    <th>
+                        <wicket:message key="TestIssue.approvalState"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <div wicket:id="approvalState"/>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+        <table>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" class="btn" wicket:id="save" value="submit"
+                           wicket:message="value:label.submit"/>
+                    <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                           wicket:message="value:label.cancel"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</wicket:panel>

@@ -1,0 +1,23 @@
+.wrapper-col-lg{margin-bottom: 25px;}
+.boxitems{border: solid 1px #ccc;border-radius: 4px;font-family:tahoma;-webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;}
+.boxitems:hover{box-shadow:0 0 4px #888}
+.pimg{width: 60%;  height: 220px;}
+.pimg .selectitem{position: absolute;right: 30px;top:10px;background: #bfbfbf;border-radius: 3px;color: #fff;padding: 2px 7px;display: flex;}
+.pimg img{    display: block;  height: 100%;  object-fit: contain;}
+.pimg .selectitem input[type=checkbox]{margin: 0;width: 15px;height: 15px;}
+.pimg .selectitem span{font-size:11px;}
+.description{background:#f7f7f7}
+.description h2{font-family:tahoma;font-size:13px;text-align:center;padding:10px;margin:0;font-weight: bolder;}
+.green {color: #4caf50!important;}
+.red {color: #ff6b6b!important;}
+.display-table{display: table;width: 100%;}
+.otherspec{direction:rtl;background:#eee}
+.otherspec .oldprice{margin-left: 5px;text-decoration: line-through;}
+.otherspec .newprice {margin-left: 5px;font-size: 12pt;}
+.otherspec p{margin: 0 0 5px;font-weight: bolder;font-size: 13px;}
+.otherspec span{color: #336999;font-weight: bolder;display: block;width: 100%}
+.flex-center{display: flex;justify-content: center;align-items: center;}
+.custom-checkbox{width: 16px;height: 16px;}
+.centeralign{text-align: center;}
+.box-half .col-lg-6 div{border-bottom:solid 1px #fff;font-size:11px;text-align:center;padding: 5px 0;}
+.box-half label{font-size: 12px;text-align: center;width: 100%;padding-top: 7px;}

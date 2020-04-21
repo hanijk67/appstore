@@ -1,0 +1,66 @@
+<wicket:panel>
+    <div wicket:id="modal" class="modal2modal"></div>
+    <div style="border: solid 1px black;padding: 15px">
+        <div wicket:id="formName" style="text-align: center"/>
+        <form wicket:id="form" class="form-inline">
+            <table>
+                <td rowspan="6">
+                    <div >
+                        <div wicket:id="testDescription" style="text-align: right"/>
+                        <table class="table form">
+                            <tr>
+                                <th>
+                                    <wicket:message key="TestIssue.title"/>
+                                </th>
+                                <td colspan="3">
+                                    <label wicket:id="title"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <wicket:message key="TestIssue.approvalState"/>
+                                </th>
+                                <td>
+                                    <div style="padding-right: 10px; padding-left: 5px" wicket:id="approvalState"
+                                         class="dropdown"/>
+                                </td>
+
+                                <th>
+                                    <wicket:message key="TestIssue.priority"/>
+                                </th>
+                                <td>
+                                    <div style="padding-left: 10px;padding-right: 5px" wicket:id="priority"
+                                         class="dropdown"/>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>
+                                    <wicket:message key="TestIssue.description"/>
+                                </th>
+                                <td colspan="3" style="width: 200px ; max-width: 200px">
+                                    <div readonly="true" disabled="true" wicket:id="description"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <div wicket:id="testResult" style="text-align: right"/>
+                        <table class="table list" cellspacing="1" cellpadding="4" wicket:id="table">[Table]
+                        </table>
+                    </div>
+                </td>
+
+                <td rowspan="6">
+                    <di wicket:id="masterContainer">
+                        <div style="min-height: 100px;width: 98%;" wicket:id="content"/>
+                    </di>
+                </td>
+            </table>
+        </form>
+    </div>
+    <div style="padding-top: 10px" class="text-center">
+        <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+        <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+    </div>
+</wicket:panel>

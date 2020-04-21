@@ -1,0 +1,77 @@
+<wicket:panel>
+    <div wicket:id="modal"/>
+    <div class="container-fluid text-center">
+
+        <form wicket:id="form" style="width: 1000px">
+            <table class="table form">
+                <tr>
+                    <th>
+                        <wicket:message key="APPPackage.versionName"/>
+                    </th>
+                    <td>
+                        <input type="text" wicket:id="versionName"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="APPPackage.versionCode"/>
+                    </th>
+                    <td>
+                        <input type="text" wicket:id="versionCode"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th style="text-align: right; background-color: #d9d9d9" colspan="4">
+                        <wicket:message key="APPPackage.packFile"/>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="packFile"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th style="text-align: right; background-color: #d9d9d9" colspan="4">
+                        <wicket:message key="APPPackage.iconFile"/>
+                    </th>
+                </tr>
+
+
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="iconFile"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th style="text-align: right; background-color: #d9d9d9" colspan="4">
+                        <wicket:message key="APPPackage.thumbImages"/>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="thumbImages"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="text-align: right; background-color: #d9d9d9" colspan="4" >
+                        <wicket:message key="APPPackage.changeLog"/>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div wicket:id="changeLogArea">ChangeLogArea</div>
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+        <div style="padding-top: 10px" class="text-center">
+            <input type="button" class="btn" wicket:id="save" value="submit"
+                   wicket:message="value:label.submit"/>
+            <!--<button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>-->
+            <button wicket:id="reset" class="btn btn-default btn-md">بازنشانی</button>
+        </div>
+    </div>
+</wicket:panel>

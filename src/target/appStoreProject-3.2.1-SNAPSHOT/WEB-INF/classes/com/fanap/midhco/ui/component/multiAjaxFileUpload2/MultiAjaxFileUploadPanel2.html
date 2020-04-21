@@ -1,0 +1,295 @@
+<wicket:panel>
+    <wicket:link>
+        <link rel="stylesheet" href="pulp_upload_js/jquery.plupload.queue/css/jquery.plupload.queue.css" type="text/css"
+              media="screen"/>
+    </wicket:link>
+
+
+    <script type="text/javascript">
+        function insertAction(parentElemId, guidPrefix, uploadFilters, maxFileCount,   maxIconSize ,ajaxNotify, fileUploadedEventBehavior, fileDeletedEventBehavior, title, uploadURL) {
+
+            plupload.addI18n({
+                'Select files': title != null ? title : 'انتخاب فایل',
+                'Add files to the upload queue and click the start button.': 'اضافه کنید فایل ها را به صف آپلود و دکمه شروع را کلیک کنید.',
+                'Filename': 'نام فایل',
+                'Status': 'وضعیت',
+                'Size': 'سایز',
+                'Add Files': 'افزودن فایل',
+                'Stop Upload': 'توقف انتقال',
+                'Start Upload': 'شروع انتقال',
+                'Add files': 'افزودن فایل',
+                'Add files.': 'افزودن فایل',
+                'Stop current upload': 'توقف انتقال جاری',
+                'Start uploading queue': 'شروع صف انتقال',
+                'Stop upload': 'توقف انتقال',
+                'Start upload': 'شروع انتقال',
+                'Uploaded %d/%d files': 'منتقل شد %d/%d از فایلها',
+                'N/A': 'N/A',
+                'Drag files here.': 'فایل های خود را اینجا بکشید',
+                'File extension error.': 'پسوند فایل شما معتبر نمی باشد',
+                'File size error.': 'خطای سایز فایل',
+                'File count error.': 'خطای تعداد فایل',
+                'Init error.': 'خطا در استارت اسکریپت',
+                'HTTP Error.': 'HTTP خطای',
+                'Security error.': 'خطای امنیتی',
+                'Generic error.': 'خطای عمومی',
+                'IO error.': 'IO خطای',
+                'File: %s': ' فایل ها : %s',
+                'Close': 'بستن',
+                '%d files queued': '%d فایل در صف',
+                'Using runtime: ': 'کنترل آپلود',
+                'File: %f, size: %s, max file size: %m': 'فایل: %f, سایز: %s, بزرگترین سایز فایل: %m',
+                'Upload element accepts only %d file(s) at a time. Extra files were stripped.': 'عنصر بارگذار فقط %d فایل رو در یک زمان می پذیرد. سایر فایل ها مجرد از این موضوع هستند.',
+                'Upload URL might be wrong or doesn\'t exist': 'آدرس آپلود اشتباه می باشد یا وجود ندارد',
+                'Error: File too large: ': 'خطا: فایل حجیم است :: ',
+                'Error: Invalid file extension: ': 'خطا پسوند فایل معتبر نمی باشد : '
+            });
+
+            var parentElem = $("#" + parentElemId)[0];
+
+            parentElem.guidPrefix = guidPrefix;
+            if (uploadFilters)
+                parentElem.uploadFilters = uploadFilters;
+
+            if (maxFileCount)
+                parentElem.maxFileCount = maxFileCount;
+
+            if (maxIconSize)
+                parentElem.maxIconSize = maxIconSize;
+
+            parentElem.uploadURL = uploadURL;
+            parentElem.ajaxNotify = ajaxNotify;
+            parentElem.fileUploadedEventBehavior = fileUploadedEventBehavior;
+            parentElem.fileDeletedEventBehavior = fileDeletedEventBehavior;
+
+            launch_plupLoad(parentElemId);
+        }
+
+        function launch_plupLoad(parentElemId) {
+            var plupLoader;
+            console.log($("#" + parentElemId)[0]);
+            var parentElem = $("#" + parentElemId)[0];
+
+            var getIndiceMapElem = function () {
+                var hiddenElem = $("#" + parentElemId).closest('[jid="uploadform"]').find("input:hidden[jid='uploadIndices']")[0];
+                return hiddenElem;
+            }
+
+            var getIndiceMapElemValue = function () {
+                var hiddenElem = getIndiceMapElem();
+                console.log('hidden elem val ', $(hiddenElem).val());
+                return $(hiddenElem).val();
+            }
+
+            var saveValuesToIndiceMap = function () {
+                var hiddenElem = getIndiceMapElem();
+                var indiceMap = hiddenElem.indiceMap;
+                var valToSave = {};
+                for (var property in indiceMap) {
+                    if (indiceMap.hasOwnProperty(property)) {
+                        var jsonValue = indiceMap[property];
+                        valToSave[jsonValue.responseKey] = jsonValue;
+                    }
+                }
+                console.log('valToSave -> ', valToSave);
+                console.log('valToSaveString -> ', JSON.stringify(valToSave));
+                $(hiddenElem).val(JSON.stringify(valToSave));
+            }
+
+            var addFileIdValueToIndiceMapElem = function (info, file) {
+                var hiddenElem = getIndiceMapElem();
+                if (!hiddenElem.indiceMap)
+                    hiddenElem.indiceMap = {};
+                var responseKey = info.response;
+                var fileId = file.id;
+                var fileName = file.name;
+                var fileSize = file.origSize;
+                hiddenElem.indiceMap[fileId] = {fileName: fileName, responseKey: responseKey, fileSize: fileSize};
+                saveValuesToIndiceMap();
+            }
+
+            var removeFileIdFromIndicMap = function (file) {
+                var hiddenElem = getIndiceMapElem();
+                var indiceMap = hiddenElem.indiceMap;
+                if (indiceMap) {
+                    delete indiceMap[file.id];
+                    saveValuesToIndiceMap();
+                }
+            }
+
+            parentElem.invoke = function () {
+                var fileUploadedEventBehavior = parentElem.fileUploadedEventBehavior;
+                Wicket.Ajax.post({'u': fileUploadedEventBehavior + "&indiceMap=" + encodeURIComponent(getIndiceMapElemValue())});
+            }
+
+            var initializer = {
+                // General settings
+                runtimes: 'html5,gears,browserplus,silverlight,flash,html4',
+                max_file_size: parentElem.maxIconSize ? parentElem.maxIconSize +'mb' : '10000mb',
+                chunk_size: '1mb',
+                unique_names: true,
+
+                // Resize images on clientside if we can
+                //resize: {width: 320, height: 240, quality: 90},
+
+                // Specify what files to browse for
+                filters: (function () {
+                    if (parentElem.uploadFilters) {
+                        return parentElem.uploadFilters;
+                    } else {
+                        return [
+                            {title: "Image files", extensions: "jpg,gif,png"},
+                            {title: "Zip files", extensions: "zip"},
+                            {title: "Doc files", extensions: "docx,doc,xls,xlsx,txt,csv,pdf"}
+                        ];
+                    }
+                })(),
+                rename: true,
+                views: {
+                    list: true,
+                    thumbs: true, // Show thumbs
+                    active: 'thumbs'
+                },
+
+                // Flash/Silverlight paths
+                flash_swf_url: 'js/plupload.flash.swf',
+                silverlight_xap_url: 'js/plupload.silverlight.xap',
+
+                // PreInit events, bound before any internal events
+                preinit: {
+                    Init: function (up, info) {
+                    },
+
+                    UploadFile: function (up, file) {
+                        // You can override settings before the file is uploaded
+                        up.settings.url = parentElem.uploadURL+"?filename="+file.name;//"http://localhost:8080/appStore" + '/ss?' + '&file_id=' + file.id + '&fileName=' + file.name;
+//                        return false;
+                    }
+                },
+
+                // Post init events, bound after the internal events
+                init: {
+                    Refresh: function (up) {
+                        // Called when upload shim is moved
+                    },
+
+                    StateChanged: function (up) {
+                        // Called when the state of the queue is changed
+                    },
+
+                    QueueChanged: function (up) {
+                        // Called when the files in queue are changed by adding/removing files
+
+                    },
+
+                    UploadProgress: function (up, file) {
+
+                    },
+
+                    FilesAdded: function (up, files) {
+                        // Callced when files are added to queue
+
+                        if (parentElem.maxFileCount) {
+                            while (up.files.length > parentElem.maxFileCount) {
+                                up.removeFile(up.files[0]);
+                            }
+                        }
+
+                        plupload.each(files, function (file) {
+                        });
+                    },
+
+                    FilesRemoved: function (up, files) {
+                        plupload.each(files, function (file) {
+                            removeFileIdFromIndicMap(file);
+                        });
+
+                        if (parentElem.ajaxNotify) {
+                            var fileDeletedEventBehavior = parentElem.fileDeletedEventBehavior;
+                            Wicket.Ajax.post({'u': fileDeletedEventBehavior + "&filesDeleted=" + encodeURIComponent(JSON.stringify(files))});
+                        }
+                    },
+
+                    FileUploaded: function (up, file, info) {
+                        console.log('uploaded', info);
+                        addFileIdValueToIndiceMapElem(info, file);
+                        if (parentElem.ajaxNotify) {
+                            var fileUploadedEventBehavior = parentElem.fileUploadedEventBehavior;
+                            Wicket.Ajax.post({
+                                'u': fileUploadedEventBehavior + "&indiceMap=" + encodeURIComponent(getIndiceMapElemValue())
+                            });
+                        }
+                    },
+
+                    ChunkUploaded: function (up, file, info) {
+                        // Called when a file chunk has finished uploading
+                    },
+
+                    Error: function (up, args) {
+                        // Called when a error has occured
+                        // Handle file specific error and general error
+                        if (args.file) {
+                        } else {
+                        }
+                    },
+                    UploadComplete: function () {
+                        $("#" + parentElemId).find('span.plupload_upload_status').css('display', 'none');
+                        $("#" + parentElemId).find('div.plupload_buttons').css('display', 'block');
+
+                        $("#" + parentElemId).find('li.plupload_done').find('div[jid="mine"]').remove();
+
+//                        $("#" + parentElemId).find('li.plupload_done')
+//                                .prepend('<div class="plupload_file_action" jid="mine"><a style="display:block;" href="#"></a></div>')
+//                                .find('div[jid="mine"]').find('a').addClass('plupload_delete')
+//                                .css('cursor', 'pointer').attr('title', 'حذف')
+//                                .click(function() {
+//                                    var plupLoader;
+//                                    plupLoader =  $("#" + parentElemId).find("div[jid='uploader']").pluploadQueue();
+//                                    var closest_li = $(this).closest('li');
+//                                    var idToRemove = $(closest_li).attr('id');
+//                                    var file = plupLoader.getFile(idToRemove);
+//                                    plupLoader.removeFile(file);
+//                                    $(closest_li).remove();
+//                                });
+                    }
+                }
+            };
+
+            plupLoader = $("#" + parentElemId).find("div[jid='uploader']").plupload(initializer);
+
+            parentElem.pluploader = plupLoader;
+            parentElem.initializer = initializer;
+
+            parentElem.changeFilter = function(newFilters) {
+                $(parentElem).find("div[jid='uploader']").plupload('getUploader').destroy();
+                $(parentElem).empty();
+                parentElem.uploadFilters = newFilters;
+                initializer.filters = parentElem.uploadFilters;
+                $(parentElem).append("<div jid=\"uploader\">Your browser doesn't support upload.</div>");
+                $(parentElem).find("div[jid='uploader']").plupload(initializer);
+            }
+
+//            var plupLoader;
+//            plupLoader = $("#" + parentElemId).find("div[jid='uploader']").plupload();
+
+//            $("#" + parentElemId).find('div.plupload_header').remove();
+//            $("#" + parentElemId).find('div.plupload_container').css('padding', '0px');
+//            $("#" + parentElemId).find("div[jid='uploader']").find('div').css('font-family', 'tahoma');
+//            $("#" + parentElemId).find("div[jid='uploader']").find('a').css('font-family', 'tahoma');
+//            $("#" + parentElemId).find("div[jid='uploader']").css('position' , '');
+        }
+
+    </script>
+
+    <div class="container-fluid">
+            <div jid="uploadform">
+        <!--<form method="post" wicket:id="uploadForm" >-->
+            <input type="hidden" wicket:id="uploadIndices" jid="uploadIndices"/>
+            <div wicket:id="uploadDiv" method="post" style="font-family: tahoma">
+
+                <div jid="uploader">Your browser doesn't support upload.</div>
+            </div>
+            </div>
+        <!--</form>-->
+    </div>
+</wicket:panel>

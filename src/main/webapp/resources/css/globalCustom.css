@@ -1,0 +1,15 @@
+.selectpicker {
+    background-image: none;
+}
+
+.panel {
+    overflow: visible;
+}
+
+.panel-body {
+    overflow: visible;
+}
+
+th.rightAligned {
+    text-align: right;
+}

@@ -1,0 +1,71 @@
+<wicket:panel>
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form wicket:id="form" style="min-width: 600px;">
+                <table>
+                    <tr>
+                        <th colspan="2">
+                            <wicket:message key="organization.fullName"/>
+                            <span class="required">*</span>
+                        </th>
+                        <td>
+                            <input class="form-control" type="text" wicket:id="fullName">
+                        </td>
+                        <th colspan="2">
+                            <wicket:message key="organization.nickName"/>
+                            <span class="required">*</span>
+                        </th>
+                        <td>
+                            <input class="form-control" type="text" wicket:id="nickName">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <wicket:message key="organization.englishFullName"/>
+                            <span class="required">*</span>
+                        </th>
+                        <td>
+                            <input class="form-control" type="text" wicket:id="englishFullName">
+                        </td>
+
+                        <th>
+                            <wicket:message key="organization.default"/>
+                        </th>
+                        <td style="margin-left: 10px" wicket:id="isDefault"></td>
+
+                    </tr>
+
+
+                    <tr>
+                        <th>
+                            <wicket:message key="organization.logo"/>
+                            <span class="required">*</span>
+                        </th>
+                        <td colspan="8">
+                            <div wicket:id="logoFile"/>
+                        </td>
+                        <td colspan="2">
+                            <img wicket:id="tmpLogoFile"/>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <div>
+
+                </div>
+                <div>
+                    <input type="button" class="btn" wicket:id="save" value="submit"
+                           wicket:message="value:label.submit"/>
+                    <input type="button" class="btn" wicket:id="cancel" value="cancel"
+                           wicket:message="value:label.cancel"/>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</wicket:panel>

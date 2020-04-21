@@ -1,0 +1,64 @@
+<wicket:panel xmlns:wicket="http://www.apache.org/internal/xmlbeans/wsdlsubst">
+    <div wicket:id="modal">Modal</div>
+    <center>
+        <form wicket:id="devForm" autocomplete="off">
+            <div class="row">
+                <div class="col-md-12">
+                    <div wicket:id="rows">
+                        <div class="col-lg-4 wrapper-col-lg">
+                            <div class="boxitems">
+                                <div class="pimg">
+                                    <img style="padding-top: 25px" wicket:id="image" align="center" class="img-responsive" alt="" width="300"
+                                         height="300">
+                                    <div class="selectitem">
+                                        <input type="checkbox" wicket:id="selectedItem"/>
+                                        <span><wicket:message key="label.select"/></span>
+                                    </div>
+                                </div>
+                                <div wicket:id="editDevice"/>
+                                <div class="description">
+                                    <div wicket:id="title" style="text-align: center"></div>
+                                </div>
+                                <div class="otherspec display-table">
+                                    <div class="box-half">
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <wicket:message key="label.status"/>
+                                                <span wicket:id="state"/></div>
+                                            <div>
+                                                <wicket:message key="label.usedBy"/>
+                                                <span wicket:id="usedBy"/></div>
+                                            <div>
+                                                <wicket:message key="label.active"/>
+                                                <span wicket:id="active"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div>
+                                                <wicket:message key="label.os"/>
+                                                <span wicket:id="os"/></div>
+                                            <div>
+                                                <wicket:message key="label.osType"/>
+                                                <span wicket:id="osType"/></div>
+                                            <div>
+                                                <div>IMEI : <span wicket:id="imei"/></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" wicket:id="span">
+                    <div><span wicket:id="navigator">[navigator]</span></div>
+                </div>
+            </div>
+        </form>
+    </center>
+</wicket:panel>
+
+<!--<div wicket:id="dataRow"></div>-->

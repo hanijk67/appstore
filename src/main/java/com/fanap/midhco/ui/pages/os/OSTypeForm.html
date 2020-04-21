@@ -1,0 +1,46 @@
+<wicket:panel>
+    <span wicket:id="feedbackPabel"/>
+
+    <div class="container-fluid text-center">
+
+        <form role="form" class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <td colspan="2">
+                        <wicket:message key="OSType.name"/>
+                        <span class="required">*</span>
+                        <input class="form-control" type="text" wicket:id="name" spec="fa">
+                    </td>
+                    <th>
+                        <wicket:message key="label.disable.verb"/>
+                    </th>
+                    <td style="margin-left: 10px" wicket:id="disable"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right">
+                        <wicket:message key="OS.osCompareScript"/>
+                    </td>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <style>
+                            .ace_editor {
+                                width: 700px !important;
+                                height: 500px !important;
+                                text-align: left;
+                            }
+                        </style>
+                        <textarea rows="20" wicket:id="osCompareScript"></textarea>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+            <div style="padding-top: 10px" class="text-center">
+                <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+                <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+            </div>
+        </form>
+    </div>
+</wicket:panel>

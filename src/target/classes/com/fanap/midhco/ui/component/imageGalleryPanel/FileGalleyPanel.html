@@ -1,0 +1,17 @@
+<wicket:panel>
+    <div wicket:id="modal"/>
+    <div class="container" wicket:id="masterContainer">
+        <div wicket:id="imageContainerLoop">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" wicket:id="imageItem">
+                <div class="hover ehover1">
+                    <img wicket:id="image" class="img-responsive" alt="">
+                    <div class="overlay">
+                        <h2 wicket:id="title"></h2>
+                        <button wicket:id="viewBtn" class="info"><wicket:message key="label.view"/></button>
+                        <button wicket:id="deleteBtn" class="info"><wicket:message key="label.delete"/></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</wicket:panel>

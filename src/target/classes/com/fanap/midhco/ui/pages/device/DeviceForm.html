@@ -1,0 +1,88 @@
+<wicket:panel xmlns:wicket="http://www.apache.org/internal/xmlbeans/wsdlsubst">
+    <span wicket:id="feedbackPanel"/>
+
+    <div class="container-fluid text-center">
+
+        <form class="form-inline" wicket:id="form">
+
+            <table class="table form">
+                <tr>
+                    <th colspan="2">
+                        <wicket:message key="Device.title"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" type="text" wicket:id="title">
+                    </td>
+
+                    <th>
+                        <wicket:message key="OSType"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td colspan="2">
+                        <div wicket:id="osType"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="Device.state"/>
+                    </th>
+                    <td>
+                        <div wicket:id="state"/>
+                    </td>
+                    <th colspan="2">
+                        <wicket:message key="Device.active"/>
+                    </th>
+                    <td>
+                        <div style="padding-left: 5px" wicket:id="active"/>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <th colspan="2">
+                        <wicket:message key="Device.imei"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td>
+                        <input class="form-control" wicket:id="imei" size="15" maxlength="15"/>
+                    </td>
+
+                    <th>
+                        <wicket:message key="OS"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td colspan="2">
+                        <div wicket:id="os"/>
+                    </td>
+                    <th>
+                        <wicket:message key="Device.usedBy"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td colspan="2">
+                        <div wicket:id="usedBy"/>
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <wicket:message key="Device.image"/>
+                        <span class="required">*</span>
+                    </th>
+                    <td colspan="8">
+                        <div wicket:id="imageFile"/>
+                    </td>
+                    <td colspan="2">
+                        <img wicket:id="tmpImageFile"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div style="padding-top: 10px" class="text-center">
+            <button wicket:id="save" class="btn btn-default btn-md">ذخیره</button>
+            <button wicket:id="cancel" class="btn btn-default btn-md">انصراف</button>
+        </div>
+    </div>
+</wicket:panel>

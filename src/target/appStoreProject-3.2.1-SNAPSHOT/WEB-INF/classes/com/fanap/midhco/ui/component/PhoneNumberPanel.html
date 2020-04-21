@@ -1,0 +1,40 @@
+<wicket:panel>
+    <script>
+        function changeAreaCodeFocusToNumber(areaElement, codeFieldLength) {
+            if(codeFieldLength != -1) {
+                var elemText = $(areaElement).val();
+                var length = elemText.length;
+                if(length > codeFieldLength) {
+                    var orig_str = $(areaElement).val();
+                    $(areaElement).val(orig_str.substring(0, codeFieldLength));
+                    var extras = orig_str.substring(codeFieldLength, length);
+                    var siblingNumberElem = $(areaElement).closest("table").find("input[code='number']");
+                    siblingNumberElem.focus();
+                    siblingNumberElem.val(extras + siblingNumberElem.val());
+                    siblingNumberElem.keyup();
+                }
+            }
+        }
+
+        function checkPhoneNumberSectionLength(areaElement, numberLength) {
+            if(numberLength != -1) {
+                var elemText = $(areaElement).val();
+                var length = elemText.length;
+                if(length >= numberLength) {
+                    $(areaElement).val($(areaElement).val().substring(0, numberLength));
+                }
+            }
+        }
+    </script>
+	<table cellpadding="0" cellspacing="0" dir="ltr" class="likeTxtField">
+		<tr>
+			<td>
+				<input class="likeTxt form-control" type="text" wicket:id="areaCode" size="2" spec="pnum" onkeydown="panels_setOldVal(this.value, this.selectionStart);"/>
+			</td>
+			<td>-</td>
+			<td>
+				<input class="likeTxt form-control" type="text" code='number' wicket:id="number" size="7" spec="pnum" onkeydown="panels_setOldVal(this.value, this.selectionStart);"/>
+			</td>
+		</tr>
+	</table>
+</wicket:panel>

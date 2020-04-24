@@ -27,7 +27,7 @@ public class App extends BaseEntitiy<Long> {
     @Column(name = "PAPPID")
     Long id;
 
-    @Column(name = "PPACKNAME", nullable = false)
+    @Column(name = "PPACKNAME")
     String packageName;
 
     @Column(name = "PTITLE")

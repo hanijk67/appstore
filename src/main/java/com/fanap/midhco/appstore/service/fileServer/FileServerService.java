@@ -308,7 +308,7 @@ public class FileServerService {
 
     public String copyFileFromServerToTemp(String fileKeyInFileServer) throws Exception {
         String tempLocation = System.getProperty("java.io.tmpdir");
-        String tempFileName = tempLocation + "/" + fileKeyInFileServer;
+        String tempFileName = tempLocation + "\\" + fileKeyInFileServer;
         FileOutputStream fout = new FileOutputStream(tempFileName);
         downloadFileFromServer(fileKeyInFileServer, fout);
         return tempFileName;

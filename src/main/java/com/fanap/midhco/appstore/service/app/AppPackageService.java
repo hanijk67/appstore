@@ -379,19 +379,14 @@ public class AppPackageService {
             fileDownURL.replace("${key}", fileKey);
             String tempFileLocation = FileServerService.Instance.copyFileFromServerToTemp(fileKey);
             File file = new File(tempFileLocation);
-
             if (!file.exists()) {
                 throw new PackageFileNotExistsException();
             }
-
             String validationScript = osType.getOsCompareScript();
             ScriptEngineManager factory = new ScriptEngineManager();
             ScriptEngine engine = factory.getEngineByName("groovy");
-
             Class scriptClass = new GroovyClassLoader().parseClass(validationScript);
-
             IAPPPackageService packageService = (IAPPPackageService) scriptClass.getMethod("parse", String.class).invoke(scriptClass, tempFileLocation);
-
             return packageService;
 
         } catch (Exception ex) {

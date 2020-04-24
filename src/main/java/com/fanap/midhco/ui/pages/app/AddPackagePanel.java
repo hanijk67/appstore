@@ -126,14 +126,14 @@ public class AddPackagePanel extends BasePanel {
                     Session session = HibernateUtil.getCurrentSession();
                     IAPPPackageService iappPackageService = AppPackageService.Instance.processPackageFile(tempUploadedFile.getPhysicalLocation(), osType);
                     if (app.getId() == null) {
-
                         Boolean packageExist = AppService.Instance.doesPackageExists(iappPackageService.getPackage(), osType, session);
-
                         if (packageExist != null && packageExist) {
                             try {
                                 if (PrincipalUtil.isCurrentUserDeveloper() != null && PrincipalUtil.isCurrentUserDeveloper()) {
                                     target.appendJavaScript("showMessage('" + getString("App.upload.error") + "');");
-                                } else {
+                                }else if (iappPackageService.getPackage().equals("") || iappPackageService.getPackage().equals(null)){
+                                    target.appendJavaScript("showMessage('" + getString("appPackageName.is.required") + "');");
+                                }else {
                                     target.appendJavaScript("showMessage('" + getString("App.appPackageName.exist") + "');");
                                 }
                             } catch (Exception e) {
@@ -143,7 +143,6 @@ public class AddPackagePanel extends BasePanel {
                         }
                     } else {
                         Comparator versionComparator = OSTypeService.Instance.getVersionComparatorForOSType(osType);
-
                         App loadedApp = (App) session.load(App.class, app.getId());
                         List<AppPackage> appPackageList = loadedApp.getAppPackages();
                         String versionCode = iappPackageService.getVersionCode();
@@ -153,6 +152,10 @@ public class AddPackagePanel extends BasePanel {
                                 throw new Exception(AppStorePropertyReader.getString("error.appPackage.add.sameVersion"));
                             }
                         }
+                    }
+
+                    if (iappPackageService.getPackage().equals("") || iappPackageService.getPackage().equals(null)){
+                        target.appendJavaScript("showMessage('" + getString("appPackageName.is.required") + "');");
                     }
 
                     versionCodeTextField.setModel(new Model<>(iappPackageService.getVersionCode()));
@@ -165,12 +168,10 @@ public class AddPackagePanel extends BasePanel {
                     target.add(versionNameTextField);
                     target.add(minSDKTextField);
                     target.add(targetSDKTextField);
-
                     AppPackageService.NewPackageInfo packageInfo =
                             AppPackageService.Instance.validateNewAppPackage(app, iappPackageService, false);
 
                     AddPackagePanel.this.packageInfo = packageInfo;
-
                     if (app.getId() == null) {
                         childFinished(target, new Model<>(iappPackageService), this);
                     }
